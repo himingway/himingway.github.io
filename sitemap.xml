@@ -2,64 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://himingway.github.io/about.html</loc>
+    <loc>https://himingway.github.io/about/</loc>
     <lastmod>2019-09-08T21:22:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://himingway.github.io/categories.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
+    <loc>https://himingway.github.io/categories/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://himingway.github.io/tags/chipset.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
+    <loc>https://himingway.github.io/tags/chipset/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/</loc>
-    <lastmod>2019-09-08T21:22:31+08:00</lastmod>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://himingway.github.io/tags/pci.html</loc>
+    <loc>https://himingway.github.io/tags/pci/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/categories/pci/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-note/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/tags/</loc>
+    <lastmod>2019-09-09T00:17:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</loc>
+    <lastmod>2019-09-09T00:01:41+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</loc>
     <lastmod>2019-09-08T21:20:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://himingway.github.io/categories/pci.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/post.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/tags.html</loc>
-    <lastmod>2019-09-08T21:20:02+08:00</lastmod>
+    <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</loc>
+    <lastmod>2019-09-08T00:02:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

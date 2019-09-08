@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ICNote - A Site for Sharing Notes about IC</title>
-    <link>https://himingway.github.io/tags.html</link>
+    <link>https://himingway.github.io/tags/</link>
     <description>Recent content in Tags on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Sep 2019 17:41:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2019 00:17:28 +0800</lastBuildDate>
     
 	<atom:link href="https://himingway.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Chipset</title>
-      <link>https://himingway.github.io/tags/chipset.html</link>
-      <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
+      <link>https://himingway.github.io/tags/chipset/</link>
+      <pubDate>Mon, 09 Sep 2019 00:17:28 +0800</pubDate>
       
-      <guid>https://himingway.github.io/tags/chipset.html</guid>
+      <guid>https://himingway.github.io/tags/chipset/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PCI</title>
-      <link>https://himingway.github.io/tags/pci.html</link>
-      <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
+      <link>https://himingway.github.io/tags/pci/</link>
+      <pubDate>Mon, 09 Sep 2019 00:17:28 +0800</pubDate>
       
-      <guid>https://himingway.github.io/tags/pci.html</guid>
+      <guid>https://himingway.github.io/tags/pci/</guid>
       <description></description>
     </item>
     

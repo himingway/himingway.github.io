@@ -62,7 +62,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://himingway.github.io/" />
 
-<meta property="og:updated_time" content="2019-09-08T17:41:25+08:00" />
+<meta property="og:updated_time" content="2019-09-09T00:17:28+08:00" />
 <meta itemprop="name" content="ICNote - A Site for Sharing Notes about IC">
 <meta itemprop="description" content="A Site for Sharing Notes about IC">
 
@@ -128,7 +128,7 @@
         
           
           
-            <a class="menu-item-link" href="https://himingway.github.io/about.html">关于</a>
+            <a class="menu-item-link" href="https://himingway.github.io/about/">关于</a>
           
         
       </li>
@@ -264,7 +264,7 @@
         
           
           
-            <a class="menu-item-link" href="https://himingway.github.io/about.html">关于</a>
+            <a class="menu-item-link" href="https://himingway.github.io/about/">关于</a>
           
 
         
@@ -297,15 +297,15 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1.html">PCI Fundamental and PCI Transaction Ordering (1)</a>
+      <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-note/">PCI Note</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-09-08" class="post-time">
-        2019-09-08
+      <time datetime="2019-09-09" class="post-time">
+        2019-09-09
       </time>
       <div class="post-category">
-          <a href="https://himingway.github.io/categories/pci.html"> PCI </a>
+          <a href="https://himingway.github.io/categories/pci/"> PCI </a>
           
         </div>
       
@@ -317,10 +317,151 @@
   <div class="post-content">
     
     <div class="post-summary">
-      1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P
+      
+
+<h2 id="1-关于-memory-write-and-invalidate">1. 关于 <code>Memory Write and Invalidate</code></h2>
+
+<p>规范中的描述是
+It allows a memory performance optimization by invalidating a &ldquo;dirty&rdquo; line in a write-back cache without requiring the actual write-back cycle thus shortening access time.</p>
+
+<p>对一个新手来说理解这句话很难，天书嘛。就像我。其实非常简单，分 3 步慢慢理解。
+PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 cpu 存储地址执行读写，等于读写了 PCI 总线地址，等于读写了 PCI 设备。</p>
+
+<p>当这片 cpu 存储器地址使用 write back 的 chche 策略时，就会出现有的 cache 跟实际的存储器不一致。cache 里的内容会比存储器里的更新，当然术语习惯称它们为“脏” &ndash; dirty。标记为 dirty 的 cache 会在合适的时机 write back 到存储器&ndash;这里是 PCI 设备。</p>
+
+<p>如果对 PCI 设备一次写入一段较大的数据，大于 1 个 cache line，而这个 cache 恰恰又是 dirty 的，那么就可以直接把数据写入存储器，同时把相关 cache line 的 dirty 标记去掉，这个操作就是 Memory Write and Invalidate 事务。 Invalidate 的是 cache line 的 dirty 标记。</p>
+
     </div>
-    <div class="read-more">
-      <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1.html" class="read-more-link">阅读全文</a>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/">PCI Fundamental and PCI Transaction Ordering (2)</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-09-09" class="post-time">
+        2019-09-09
+      </time>
+      <div class="post-category">
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/">PCI Fundamental and PCI Transaction Ordering (1)</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-09-08" class="post-time">
+        2019-09-08
+      </time>
+      <div class="post-category">
+          <a href="https://himingway.github.io/categories/pci/"> PCI </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      
+
+<h2 id="1-pci-pin-list">1. PCI Pin List</h2>
+
+<p><img src="/assets/20190908182945.png" alt="" /></p>
+
+<p>在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 PIN，比如 64 位扩展 PIN：AD[63:32]，等。对于基本的 PIN，它的名称和功能如下：</p>
+
+<ul>
+<li>AD[31:0]: 复用的地址和数据总线</li>
+<li>C/BE[3::0]: 总线命令（Bus Command）和 Byte 使能信号（Byte Enable），这也是一个复用的总线。当总线在地址周期时，它的功能为总线命令；当总线在数据周期时候，它的功能为 Byte 使能。</li>
+<li>PAR: Parity，奇偶校验位</li>
+<li>FRAME#: 周期帧（Cycle Frame）, 当 FRAME# 有效时，意味着总线传输开始；当 FRAME# 无效时，意味着该时钟的传输为最后一个数据传输，或者数据传输已经完成。</li>
+<li>IRDY#: 标志 Initiator 的数据准备完成 Ready</li>
+<li>TRDY#: 标志 Target 的数据准备完成 Ready</li>
+</ul>
+
+<p><img src="/assets/20190908184159.png" alt="" /></p>
+
+<ul>
+<li>STOP#: 当该信号有效时候，Target 设备向 Master 设备发送停止信号。</li>
+<li>LOCK#: PCI 主设备可以使用该信号，原子操作将目标设备的某个存储器或者 I/O 资源锁定，以禁止其他 PCI 主设备访问此资源，直到锁定这个资源的主设备将其释放。PCI 总线使用 LOCK# 信号实现 LOCK 总线事务，只有 HOST 主桥、PCI 桥或者其他桥片可以使用 LOCK#信号。</li>
+<li>IDSEL: 在 PCI 总线配置读写总线事务中，该信号用于选择 PCI 目标设备。</li>
+<li>DEVSEL#: 该信号有效时，表示 PCI 总线的目标设备已经准备好，该信号有效表示目标设备已经完成了地址译码，也就是说，这个信号已经被选择。</li>
+<li>REQ#: Master 的 Request 仲裁信号。</li>
+<li>GNT#: Master 的 Grant 仲裁信号。</li>
+<li>INTx#: 请求中断信号。</li>
+</ul>
+
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/">Table of Content for PCI Fundamental and PCI Transaction Ordering</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-09-08" class="post-time">
+        2019-09-08
+      </time>
+      <div class="post-category">
+          <a href="https://himingway.github.io/categories/pci/"> PCI </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <ul>
+<li><a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1">PCI Fundamental and PCI Transaction Ordering (1)</a></li>
+</ul>
+
+<hr />
+
+<p>其它：</p>
+
+<ul>
+<li><a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-note/">PCI笔记</a></li>
+</ul>
+
     </div>
     
   </div>

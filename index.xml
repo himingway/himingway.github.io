@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ICNote - A Site for Sharing Notes about IC</title>
+    <link>https://himingway.github.io/</link>
+    <description>Recent content on ICNote - A Site for Sharing Notes about IC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Aug 2019 21:38:52 +0800</lastBuildDate>
+    
+        <atom:link href="https://himingway.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>https://himingway.github.io/about/</link>
+      <pubDate>Tue, 20 Aug 2019 21:38:52 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/about/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;关于博主&#34;&gt;关于博主&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;西安电子科技大学微电子学院硕士研究生&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;工程师&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;CPU Asic Designer&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;博文原则&#34;&gt;博文原则&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;博客内容以原创为主，翻译和转载为辅；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;原创内容若有参考他人文章，在文末给出参考文章链接；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;翻译文章在文章开头给出原文链接；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于转载的文章，尊重作者版权，遵守转载协议；&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;版权问题&#34;&gt;版权问题&lt;/h3&gt;
+
+&lt;p&gt;本博客首发的原创作品，采用 “CC BY-NC-ND 4.0” 版权协议。&lt;/p&gt;
+
+&lt;h3 id=&#34;版权声明如下&#34;&gt;版权声明如下：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;允许自由分享、修改博文内容；&lt;/li&gt;
+&lt;li&gt;转载需保留署名；&lt;/li&gt;
+&lt;li&gt;严禁他人进行商业性使用；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;对使用者的建议如下&#34;&gt;对使用者的建议如下：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;若要转载，请留言说明，并在文末注明出处；&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

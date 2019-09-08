@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://himingway.github.io/sitemap.xml

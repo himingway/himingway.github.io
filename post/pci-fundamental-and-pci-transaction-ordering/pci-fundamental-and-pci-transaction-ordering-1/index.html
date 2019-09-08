@@ -62,14 +62,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/" />
 <meta property="article:published_time" content="2019-09-08T17:41:25+08:00" />
-<meta property="article:modified_time" content="2019-09-08T17:41:25+08:00" />
+<meta property="article:modified_time" content="2019-09-08T21:14:55+08:00" />
 <meta itemprop="name" content="PCI Fundamental and PCI Transaction Ordering (1)">
 <meta itemprop="description" content="1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P">
 
 
 <meta itemprop="datePublished" content="2019-09-08T17:41:25&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-08T17:41:25&#43;08:00" />
-<meta itemprop="wordCount" content="603">
+<meta itemprop="dateModified" content="2019-09-08T21:14:55&#43;08:00" />
+<meta itemprop="wordCount" content="575">
 
 
 
@@ -355,12 +355,12 @@
 
 <ul>
 <li>STOP#: 当该信号有效时候，Target 设备向 Master 设备发送停止信号。</li>
-<li>LOCK#: PCI主设备可以使用该信号，原子操作将目标设备的某个存储器或者I/O资源锁定，以禁止其他PCI主设备访问此资源，直到锁定这个资源的主设备将其释放。PCI 总线使用LOCK# 信号实现LOCK总线事务，只有HOST主桥、PCI桥或者其他桥片可以使用LOCK#信号。</li>
-<li>IDSEL: 在PCI总线配置读写总线事务中，该信号用于选择PCI目标设备。Initialization Device Select, chip select during configuration read and write transactions</li>
-<li>DEVSEL#: 该信号有效时，表示PCI总线的目标设备已经准备好，该信号有效表示目标设备已经完成了地址译码，Device Select, indicates whether any device on the bus has been selected</li>
-<li>REQ#: Request</li>
-<li>GNT#: Grant</li>
-<li>INTx#: Interrupt</li>
+<li>LOCK#: PCI 主设备可以使用该信号，原子操作将目标设备的某个存储器或者 I/O 资源锁定，以禁止其他 PCI 主设备访问此资源，直到锁定这个资源的主设备将其释放。PCI 总线使用 LOCK# 信号实现 LOCK 总线事务，只有 HOST 主桥、PCI 桥或者其他桥片可以使用 LOCK#信号。</li>
+<li>IDSEL: 在 PCI 总线配置读写总线事务中，该信号用于选择 PCI 目标设备。</li>
+<li>DEVSEL#: 该信号有效时，表示 PCI 总线的目标设备已经准备好，该信号有效表示目标设备已经完成了地址译码，也就是说，这个信号已经被选择。</li>
+<li>REQ#: Master 的 Request 仲裁信号。</li>
+<li>GNT#: Master 的 Grant 仲裁信号。</li>
+<li>INTx#: 请求中断信号。</li>
 </ul>
 
     </div>
@@ -376,6 +376,9 @@
     <span class="item-title">上次更新</span>
     <span class="item-content">
       2019-09-08
+      
+        
+        
       
     </span>
   </p>

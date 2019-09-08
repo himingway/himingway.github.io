@@ -85,6 +85,12 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
 &lt;p&gt;当这片 cpu 存储器地址使用 write back 的 chche 策略时，就会出现有的 cache 跟实际的存储器不一致。cache 里的内容会比存储器里的更新，当然术语习惯称它们为“脏” &amp;ndash; dirty。标记为 dirty 的 cache 会在合适的时机 write back 到存储器&amp;ndash;这里是 PCI 设备。&lt;/p&gt;
 
 &lt;p&gt;如果对 PCI 设备一次写入一段较大的数据，大于 1 个 cache line，而这个 cache 恰恰又是 dirty 的，那么就可以直接把数据写入存储器，同时把相关 cache line 的 dirty 标记去掉，这个操作就是 Memory Write and Invalidate 事务。 Invalidate 的是 cache line 的 dirty 标记。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
     </item>
@@ -134,6 +140,12 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
 &lt;li&gt;REQ#: Master 的 Request 仲裁信号。&lt;/li&gt;
 &lt;li&gt;GNT#: Master 的 Grant 仲裁信号。&lt;/li&gt;
 &lt;li&gt;INTx#: 请求中断信号。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       

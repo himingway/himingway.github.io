@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PCI - ICNote - A Site for Sharing Notes about IC</title>
+  <title>PCI Fundamental and PCI Transaction Ordering（1） - ICNote - A Site for Sharing Notes about IC</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="himingway" />
-  <meta name="description" content="" />
+  <meta name="description" content="1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P" />
 <meta name="keywords" content="pci" />
 
 
@@ -57,26 +57,26 @@
 
 
 
-<meta property="og:title" content="PCI" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="PCI Fundamental and PCI Transaction Ordering（1）" />
+<meta property="og:description" content="1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://himingway.github.io/post/pci/" />
 <meta property="article:published_time" content="2019-09-08T17:41:25+08:00" />
-<meta property="article:modified_time" content="2019-09-08T17:41:25+08:00" />
-<meta itemprop="name" content="PCI">
-<meta itemprop="description" content="">
+<meta property="article:modified_time" content="2019-09-08T17:42:44+08:00" />
+<meta itemprop="name" content="PCI Fundamental and PCI Transaction Ordering（1）">
+<meta itemprop="description" content="1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P">
 
 
 <meta itemprop="datePublished" content="2019-09-08T17:41:25&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-08T17:41:25&#43;08:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="dateModified" content="2019-09-08T17:42:44&#43;08:00" />
+<meta itemprop="wordCount" content="603">
 
 
 
 <meta itemprop="keywords" content="pci,chipset," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PCI"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="PCI Fundamental and PCI Transaction Ordering（1）"/>
+<meta name="twitter:description" content="1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -296,7 +296,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">PCI</h1>
+      <h1 class="post-title">PCI Fundamental and PCI Transaction Ordering（1）</h1>
       
       <div class="post-meta">
         <time datetime="2019-09-08" class="post-time">
@@ -321,13 +321,48 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-pci-pin-list">1. PCI Pin List</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>test</p>
+      
+
+<h2 id="1-pci-pin-list">1. PCI Pin List</h2>
+
+<p><img src="assets/20190908182945.png" alt="" /></p>
+
+<p>在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 PIN，比如 64 位扩展 PIN：AD[63:32]，等。对于基本的 PIN，它的名称和功能如下：</p>
+
+<ul>
+<li>AD[31:0]: 复用的地址和数据总线</li>
+<li>C/BE[3::0]: 总线命令（Bus Command）和 Byte 使能信号（Byte Enable），这也是一个复用的总线。当总线在地址周期时，它的功能为总线命令；当总线在数据周期时候，它的功能为 Byte 使能。</li>
+<li>PAR: Parity，奇偶校验位</li>
+<li>FRAME#: 周期帧（Cycle Frame）, 当 FRAME# 有效时，意味着总线传输开始；当 FRAME# 无效时，意味着该时钟的传输为最后一个数据传输，或者数据传输已经完成。</li>
+<li>IRDY#: 标志 Initiator 的数据准备完成 Ready</li>
+<li>TRDY#: 标志 Target 的数据准备完成 Ready</li>
+</ul>
+
+<p><img src="assets/20190908184159.png" alt="" /></p>
+
+<ul>
+<li>STOP#: 当该信号有效时候，Target 设备向 Master 设备发送停止信号。</li>
+<li>LOCK#: PCI主设备可以使用该信号，原子操作将目标设备的某个存储器或者I/O资源锁定，以禁止其他PCI主设备访问此资源，直到锁定这个资源的主设备将其释放。PCI 总线使用LOCK# 信号实现LOCK总线事务，只有HOST主桥、PCI桥或者其他桥片可以使用LOCK#信号。</li>
+<li>IDSEL: 在PCI总线配置读写总线事务中，该信号用于选择PCI目标设备。Initialization Device Select, chip select during configuration read and write transactions</li>
+<li>DEVSEL#: 该信号有效时，表示PCI总线的目标设备已经准备好，该信号有效表示目标设备已经完成了地址译码，Device Select, indicates whether any device on the bus has been selected</li>
+<li>REQ#: Request</li>
+<li>GNT#: Grant</li>
+<li>INTx#: Interrupt</li>
+</ul>
+
     </div>
 
     
@@ -341,6 +376,9 @@
     <span class="item-title">上次更新</span>
     <span class="item-content">
       2019-09-08
+      
+        
+        
       
     </span>
   </p>

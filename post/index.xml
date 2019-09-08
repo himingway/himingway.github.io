@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ICNote - A Site for Sharing Notes about IC</title>
-    <link>https://himingway.github.io/post/</link>
+    <link>https://himingway.github.io/post.html</link>
     <description>Recent content in Posts on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -13,10 +13,10 @@
     
     <item>
       <title>PCI Fundamental and PCI Transaction Ordering (1)</title>
-      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</link>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1.html</link>
       <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
       
-      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</guid>
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1.html</guid>
       <description>1. PCI Pin List 在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 P</description>
     </item>
     

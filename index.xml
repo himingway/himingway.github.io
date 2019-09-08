@@ -64,17 +64,17 @@
     </item>
     
     <item>
-      <title>PCI Fundamental and PCI Transaction Ordering（1）</title>
-      <link>https://himingway.github.io/post/pci/</link>
+      <title>PCI Fundamental and PCI Transaction Ordering (1)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</link>
       <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
       
-      <guid>https://himingway.github.io/post/pci/</guid>
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</guid>
       
         <description>
 
 &lt;h2 id=&#34;1-pci-pin-list&#34;&gt;1. PCI Pin List&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;assets/20190908182945.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190908182945.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 PIN，比如 64 位扩展 PIN：AD[63:32]，等。对于基本的 PIN，它的名称和功能如下：&lt;/p&gt;
 
@@ -87,7 +87,7 @@
 &lt;li&gt;TRDY#: 标志 Target 的数据准备完成 Ready&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;assets/20190908184159.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190908184159.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;STOP#: 当该信号有效时候，Target 设备向 Master 设备发送停止信号。&lt;/li&gt;

@@ -62,7 +62,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://himingway.github.io/" />
 
-<meta property="og:updated_time" content="2019-09-09T00:17:28+08:00" />
+<meta property="og:updated_time" content="2019-09-10T00:42:49+08:00" />
 <meta itemprop="name" content="ICNote - A Site for Sharing Notes about IC">
 <meta itemprop="description" content="A Site for Sharing Notes about IC">
 
@@ -297,6 +297,44 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/eda/">EDA 工具使用笔记</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-09-10" class="post-time">
+        2019-09-10
+      </time>
+      <div class="post-category">
+          <a href="https://himingway.github.io/categories/eda/"> EDA </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      
+
+<h2 id="1-vcs-与-verdi-联合使用">1. VCS 与 Verdi 联合使用</h2>
+
+<p>在 VCS 编译的时候，要额外加上 <code>-debug_access+all -kdb -lca</code> 这个三个选项参数，这样就能在 VCS Compile 中看到 simv.daidir/kdb.elab++这个目录，这个目录就是 VCS 为 Verdi 产生的库，其实就是 VCS 帮 Verdi 生成了一个 Verdi 认识的中间文件，可支持单步调试功能。</p>
+
+<p>如果有了<code>​simv.daidir/kdb.elab++</code>库文件， 可以用<code>Verdi -sv +v2k -elab simv.daidir/kdb -ssf xxx.fsdb</code> 命令打开 Verdi，或者直接<code>Verdi -sv +v2k -ssf xxx.fsdb</code>，或者增加一个选项，-gui=verdi，表示使用 verdi 这个工具进行单步调试。</p>
+
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-note/">PCI Note</a>
     </h1>
     
@@ -491,17 +529,17 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
 <p>下面介绍 PCI 基本的传输协议：</p>
 
 <ul>
-<li>当 FRAME#和 IRDY#同时无效的时候，PCI BUS 处于闲置（IDLE）状态。</li>
+<li>当 FRAME# 和 IRDY# 同时无效的时候，PCI BUS 处于闲置（IDLE）状态。</li>
 <li>FRANE#有效，表明数据开始传输：
 
 <ul>
-<li>当 FRAME#信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。</li>
-<li>当 IRDY#和 TRDY#同时有效的时候，PCI BUS 为数据周期（Data Phase）。</li>
-<li>当 IRDY#或 TRDY#的时候，PCI BUS 为等待周期（Wait Cycle）。</li>
-<li>当所需要的数据准备好的时候，xRDY#必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY 有效）。</li>
+<li>当 FRAME# 信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。</li>
+<li>当 IRDY# 和 TRDY# 同时有效的时候，PCI BUS 为数据周期（Data Phase）。</li>
+<li>当 IRDY# 或 TRDY# 的时候，PCI BUS 为等待周期（Wait Cycle）。</li>
+<li>当所需要的数据准备好的时候，xRDY# 必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY# 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY# 有效）。</li>
 </ul></li>
-<li>当 FRAME#无效，IRDY#有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY#和 TRDY#必须是有效的，若 TRDY#无效，则等待 TRDY#有效）。</li>
-<li>当最后一笔传输完成后，FRAME# 和 IRDY#同时无效。</li>
+<li>当 FRAME# 无效，IRDY# 有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY# 和 TRDY# 必须是有效的，若 TRDY# 无效，则等待 TRDY# 有效）。</li>
+<li>当最后一笔传输完成后，FRAME# 和 IRDY# 同时无效。</li>
 </ul>
 
 <hr />

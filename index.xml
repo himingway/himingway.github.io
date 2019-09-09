@@ -78,7 +78,7 @@
 
 &lt;p&gt;在 VCS 编译的时候，要额外加上 &lt;code&gt;-debug_access+all -kdb -lca&lt;/code&gt; 这个三个选项参数，这样就能在 VCS Compile 中看到 simv.daidir/kdb.elab++这个目录，这个目录就是 VCS 为 Verdi 产生的库，其实就是 VCS 帮 Verdi 生成了一个 Verdi 认识的中间文件，可支持单步调试功能。&lt;/p&gt;
 
-&lt;p&gt;如果有了&lt;code&gt;​simv.daidir/kdb.elab++&lt;/code&gt;库文件， 可以用&lt;code&gt;Verdi -sv +v2k -elab simv.daidir/kdb -ssf xxx.fsdb&lt;/code&gt; 命令打开 Verdi，或者直接&lt;code&gt;Verdi -sv +v2k -ssf xxx.fsdb&lt;/code&gt;，或者增加一个选项，-gui=verdi，表示使用 verdi 这个工具进行单步调试。&lt;/p&gt;
+&lt;p&gt;如果有了&lt;code&gt;​simv.daidir/kdb.elab++&lt;/code&gt;库文件， 可以用&lt;code&gt;Verdi -sv +v2k -elab simv.daidir/kdb -ssf xxx.fsdb&lt;/code&gt; 命令打开 Verdi，或者直接&lt;code&gt;Verdi -sv +v2k -ssf xxx.fsdb&lt;/code&gt;，或者增加一个选项，&lt;code&gt;-gui=verdi&lt;/code&gt;，表示使用 verdi 这个工具进行单步调试。&lt;/p&gt;
 </description>
       
     </item>

@@ -224,6 +224,8 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
 
 &lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190910001455.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;下面介绍 PCI 基本的传输协议：&lt;/p&gt;
+
 &lt;ul&gt;
 &lt;li&gt;当 FRAME#和 IRDY#同时无效的时候，PCI BUS 处于闲置（IDLE）状态。&lt;/li&gt;
 &lt;li&gt;FRANE#有效，表明数据开始传输：
@@ -236,6 +238,12 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;当 FRAME#无效，IRDY#有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY#和 TRDY#必须是有效的，若 TRDY#无效，则等待 TRDY#有效）。&lt;/li&gt;
 &lt;li&gt;当最后一笔传输完成后，FRAME# 和 IRDY#同时无效。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       

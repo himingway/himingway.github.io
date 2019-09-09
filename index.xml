@@ -320,9 +320,8 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</guid>
       
         <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (1)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (2)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (2)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;

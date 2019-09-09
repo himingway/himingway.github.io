@@ -10,20 +10,20 @@
   
   <url>
     <loc>https://himingway.github.io/categories/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/tags/eda/</loc>
-    <lastmod>2019-09-10T00:59:22+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/categories/eda/</loc>
+    <lastmod>2019-09-10T00:59:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/tags/eda/</loc>
     <lastmod>2019-09-10T00:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -38,42 +38,42 @@
   
   <url>
     <loc>https://himingway.github.io/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/post/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/tags/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/tags/chipset/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/categories/pci/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/tags/pci/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -101,7 +101,7 @@
   
   <url>
     <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</loc>
-    <lastmod>2019-09-10T01:04:23+08:00</lastmod>
+    <lastmod>2019-09-10T01:09:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

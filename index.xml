@@ -102,7 +102,142 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
       
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</guid>
       
-        <description></description>
+        <description>
+
+&lt;h2 id=&#34;2-pci-protocol&#34;&gt;2. PCI Protocol&lt;/h2&gt;
+
+&lt;h3 id=&#34;2-1-bus-command&#34;&gt;2.1. Bus Command&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190909234959.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;C/BE[3:0]#&lt;/th&gt;
+&lt;th&gt;命令类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0000&lt;/td&gt;
+&lt;td&gt;Interrupt Acknowledge&lt;/td&gt;
+&lt;td&gt;中断响应总线事务读取当前挂接在 PCI 总线上的中断控制器的中断向量号。目前大多数处理器系统的中断控制器都不挂接在 PCI 总线上，因此这种总线事务很少使用&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0001&lt;/td&gt;
+&lt;td&gt;Special Cycle&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用 Special Cycle 事务在 PCI 总线上进行信息广播&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0010&lt;/td&gt;
+&lt;td&gt;I/O Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的 LO 地址空间进行读操作。目前多数 PCI 设备都不支持 O 地址空间，而仅支持存储器地址空间，但是仍有部分 PCI 设备同时包含 LO 地址空间和存储器地址空间&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0011&lt;/td&gt;
+&lt;td&gt;I/O Write&lt;/td&gt;
+&lt;td&gt;对 PCⅠ总线的 LO 地址空间进行写操作&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0100&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0101&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0110&lt;/td&gt;
+&lt;td&gt;Memory Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行读操作。PCI 设备也可以使用该总线事务读取处理器的存储器空间&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;0111&lt;/td&gt;
+&lt;td&gt;Memory Write&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行写操作。PCI 设备也可以使用该总线事务向处理器的存储器空间进行写操作&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1010&lt;/td&gt;
+&lt;td&gt;Configuration Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以对 PCl 设备的配置空间进行读操作。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Configuration Write&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以对 PCl 设备的配置空间进行写操作。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1100&lt;/td&gt;
+&lt;td&gt;Memory Read Multiple&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行多行读操作&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Dual Address Cycle&lt;/td&gt;
+&lt;td&gt;PCI 总线支持 64 位地址，处理器或者其他 PCI 设备访问 64 位 PCI 总线地址时，必须使用双地址周期产生 64 位的 PCI 总线地址。PCI 设备使用 DMA 读写方式访问 64 位的存储器地址时，也可以使用该总线事务&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;Memory Read Line&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行单行读操作&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Memory Write and Invalidate&lt;/td&gt;
+&lt;td&gt;存储器写并无效操作，与存储器写不同，PCI 设备可以使用该总线事务对主存储器空间进行写操作。该总线事务将数据写人主存储器的同时，将对应 Cache 行中的数据“使无效”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;2-2-basic-transfer-control&#34;&gt;2.2. Basic Transfer Control&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190910001455.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当 FRAME#和 IRDY#同时无效的时候，PCI BUS 处于闲置（IDLE）状态。&lt;/li&gt;
+&lt;li&gt;FRANE#有效，表明数据开始传输：
+
+&lt;ul&gt;
+&lt;li&gt;当 FRAME#信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。&lt;/li&gt;
+&lt;li&gt;当 IRDY#和 TRDY#同时有效的时候，PCI BUS 为数据周期（Data Phase）。&lt;/li&gt;
+&lt;li&gt;当 IRDY#或 TRDY#的时候，PCI BUS 为等待周期（Wait Cycle）。&lt;/li&gt;
+&lt;li&gt;当所需要的数据准备好的时候，xRDY#必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY 有效）。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;当 FRAME#无效，IRDY#有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY#和 TRDY#必须是有效的，若 TRDY#无效，则等待 TRDY#有效）。&lt;/li&gt;
+&lt;li&gt;当最后一笔传输完成后，FRAME# 和 IRDY#同时无效。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       
     </item>
     
@@ -160,6 +295,7 @@ PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 c
       
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1&#34;&gt;PCI Fundamental and PCI Transaction Ordering (1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2&#34;&gt;PCI Fundamental and PCI Transaction Ordering (2)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;

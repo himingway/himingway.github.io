@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="himingway" />
-  <meta name="description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示" />
+  <meta name="description" content="1.1. Example 1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff; CONFIG_ADDRESS (CF8h) Transaction： ADDRESS 周期：ADDRESS 为 32&#39;hCF8，Command 为 4&#39;b0011（I/O 写" />
 <meta name="keywords" content="PCI, Ordering" />
 
 
@@ -56,27 +56,29 @@
 
 
 
+<link rel="stylesheet" href="/css/">
+
 
 <meta property="og:title" content="PCI Configuration" />
-<meta property="og:description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示" />
+<meta property="og:description" content="1.1. Example 1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff; CONFIG_ADDRESS (CF8h) Transaction： ADDRESS 周期：ADDRESS 为 32&#39;hCF8，Command 为 4&#39;b0011（I/O 写" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/" />
 <meta property="article:published_time" content="2019-09-12T21:47:15+08:00" />
-<meta property="article:modified_time" content="2019-09-12T22:01:48+08:00" />
+<meta property="article:modified_time" content="2019-09-12T22:13:47+08:00" />
 <meta itemprop="name" content="PCI Configuration">
-<meta itemprop="description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示">
+<meta itemprop="description" content="1.1. Example 1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff; CONFIG_ADDRESS (CF8h) Transaction： ADDRESS 周期：ADDRESS 为 32&#39;hCF8，Command 为 4&#39;b0011（I/O 写">
 
 
 <meta itemprop="datePublished" content="2019-09-12T21:47:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-12T22:01:48&#43;08:00" />
-<meta itemprop="wordCount" content="2208">
+<meta itemprop="dateModified" content="2019-09-12T22:13:47&#43;08:00" />
+<meta itemprop="wordCount" content="1967">
 
 
 
 <meta itemprop="keywords" content="PCI,Chipset," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PCI Configuration"/>
-<meta name="twitter:description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示"/>
+<meta name="twitter:description" content="1.1. Example 1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff; CONFIG_ADDRESS (CF8h) Transaction： ADDRESS 周期：ADDRESS 为 32&#39;hCF8，Command 为 4&#39;b0011（I/O 写"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -90,6 +92,10 @@
 
 
 
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -325,7 +331,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#1-pci-configuration-过程">1. PCI Configuration 过程</a>
+<li>
 <ul>
 <li><a href="#1-1-example">1.1. Example</a>
 <ul>
@@ -345,22 +351,6 @@
     <div class="post-content">
       
 
-<h2 id="1-pci-configuration-过程">1. PCI Configuration 过程</h2>
-
-<p>例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下：</p>
-
-<p><strong>Step1:</strong>  向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示）采用 I/O 写的方式写入 <code>32'b1_0000000_0000_0010_00001_000_000011_00</code></p>
-
-<p><img src="http://notes.iaikx.com/image/20190912213318.png" alt="" /></p>
-
-<p>如果设备直接挂在主桥上，主桥将会产生 Type 0 Configuration Transaction；如果设备没有挂在主桥上，将会产生 Type 1 Configuration Transaction 向下传输，当 Type 1 Configuration Transaction 到达设备所在的 Bridge 时，Type 1 Transaction 在 bridge 中将会转换为 Type 0 Transaction （如图 3-3 所示）。</p>
-
-<p><img src="http://notes.iaikx.com/image/20190912213346.png" alt="" /></p>
-
-<p>Bridge 的 AD[31:11] 连接 PCI 设备的 IDSEL 位，根据 Device Number 的数据，PCI Bridge 将将某个设备的 IDSEL 置为有效，便于下个 transaction 进行寄存器配置。</p>
-
-<p><strong>Step2:</strong> 向 CONFIG_DATA (CFCh) 地址采用 I/O 写的方式向 Step1 中所选的 PCI 设备寄存器写入配置内容。</p>
-
 <h3 id="1-1-example">1.1. Example</h3>
 
 <h4 id="1-1-1-config-bus-1-device-2-function-3-reg-byte-47-data-to-0xff">1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff;</h4>
@@ -371,12 +361,12 @@
 <ul>
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCF8</code>，Command 为 <code>4'b0011</code>（I/O 写）;</li>
 
-<li><p>DATA 周期：DATA 为 <code>32'b1_0000000_00000001_00010_011_001011_00</code>；ByteEnable 为 <code>4'b0000</code>，表明四个 Byte 都有效。</p>
-
-<pre><code>En_..Resv._..Bus..._.Dev._Fun_.Reg.._00
-32'b1_0000000_00000001_00010_011_001011_00
-1_...0..._...1...._..2.._.3._..11.._00
-</code></pre></li>
+<li><p>DATA 周期：DATA 为 &lsquo;32&rsquo;b1_0000000_00000001_00010_011_001011_00<code>；ByteEnable 为</code>4&rsquo;b0000`，表明四个 Byte 都有效。
+　</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">En_</span><span class="p">..</span><span class="n">Resv</span><span class="p">.</span><span class="n">_</span><span class="p">..</span><span class="n">Bus</span><span class="p">...</span><span class="n">_</span><span class="p">.</span><span class="n">Dev</span><span class="p">.</span><span class="n">_Fun_</span><span class="p">.</span><span class="n">Reg</span><span class="p">..</span><span class="n">_00</span>
+<span class="mi">32</span><span class="err">&#39;</span><span class="n">b1_0000000_00000001_00010_011_001011_00</span>
+<span class="mi">1</span><span class="n">_</span><span class="p">..</span><span class="mf">.0</span><span class="p">...</span><span class="n">_</span><span class="p">..</span><span class="mf">.1</span><span class="p">....</span><span class="n">_</span><span class="p">.</span><span class="mf">.2</span><span class="p">..</span><span class="n">_</span><span class="mf">.3</span><span class="p">.</span><span class="n">_</span><span class="p">.</span><span class="mf">.11</span><span class="p">..</span><span class="n">_00</span>
+</code></pre></div></li>
 </ul></li>
 
 <li><p>CONFIG_DATA (CFCh) Transaction<br />
@@ -399,11 +389,9 @@
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCF8</code>，Command 为 <code>4'b0011</code>（I/O 写）;</li>
 
 <li><p>DATA 周期：DATA 为 <code>32'b1_0000000_00000010_00001_100_000110_00</code>；ByteEnable 为 <code>4'b0000</code>，表明四个 Byte 都有效。</p>
-
-<pre><code>En_..Resv._..Bus..._.Dev._Fun_.Reg.._00
-32'b1_0000000_00000010_00001_100_000110_00
-1_...0..._...2...._..1.._.4._..6..._00
-</code></pre></li>
+<div class="highlight"><pre class="chroma">En_..Resv._..Bus..._.Dev._Fun_.Reg.._00
+32&#39;b1_0000000_00000010_00001_100_000110_00
+1_...0..._...2...._..1.._.4._..6..._00</pre></div></li>
 </ul></li>
 </ul>
 
@@ -440,48 +428,42 @@
 <p>x86 的 CPU 只有内存和 I/O 两种空间，没有专用的配置空间，PCI 协议规定利用特定的 I/O 空间操作驱动 PCI 桥路转换成配置空间的操作。目前存在两种转换机制，即配置机制 1#和配置机制 2#。配置机制 2#在新的设计中将不再被采用，新的设计应使用配置机制 1#来产生配置空间的物理操作。这种机制使用了两个特定的 32 位 I/O 空间，即 CF8h 和 CFCh。这两个空间对应于 PCI 桥路的两个寄存器，当桥路看到 CPU 在局部总线对这两个 I/O 空间进行双字 操作时，就将该 I/O 操作转变为 PCI 总线的配置操作。寄存器 CF8h 用于产生配置空间的地址（CONFIG-ADDRESS），寄存器 CFCh 用于保存 配置空间的读写数据（CONFIG-DATA）。</p>
 
 <p>配置地址端口（CF8H）的格式定义如下：</p>
-
-<pre><code>bit31: 使能  决定是否允许访问配置空间：为“1”时表示可以访问；为“0”时表示不可以访问
+<div class="highlight"><pre class="chroma">bit31: 使能  决定是否允许访问配置空间：为“1”时表示可以访问；为“0”时表示不可以访问
 bit24~bit30: 保留
 bit16~bit23:PCI 总线号 从系统中的 256 条总线中选择一条，0--255
 bit11~bit15:PCI 设备号 在一条给定的总线上选择 32 个设备中的一个。0--31
 bit8~bit10:PCI 设备功能号 选择多功能设备中的某一个功能，有八种功能，0--7
 bit2~bit7: 寄存器号 选择配置空间中的一个双字（32 位）
-bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间寄存器。
-</code></pre>
-
+bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间寄存器。</pre></div>
 <p>访问设备的 pci 空间时，将要访问配置空间寄存器的总线号、设备号、功能号和寄存器号以一个双字的格式写到配置地址端口 (CF8H-CFBH)，接着执行配置数据端口 (CFCH) 的读和写，向配置数据口写数据即向配置空间写数据，从配置数据口读数据即从配置空间读数据。 以下是在 DOS 下使用。</p>
-
-<pre><code class="language-cpp">#define PCI_ADDRESS_PORT 0x0CF8
-#define PCI_DATA_PORT 0x0CFC
-//获取总线号、设备号、功能号和寄存器号组成的地址。
-u32 GetCf8Value(struct pci_dev *pdev,u8 Register)
-{
-	return (0x80000000|pdev-&gt;Bus&lt;&lt;16)|(pdev-&gt;Device &lt;&lt; 11)|(pdev-&gt;Function &lt;&lt; 8)|Register;
-}
-u8 PciRead8(struct pci_dev *pdev,u8 Register)
-{
-	u32 Cf8Val = GetCf8Value(pdev,Register);
-	u8 Stride = (u8)(Cf8Val &amp; 0x03);
-	u8 D8;
-	Cf8Val &amp;= 0xFFFFFFFC; //转换成 CF8 配置端口地址格式，最后 2bit 是 0
-	outpd(PCI_ADDRESS_PORT, Cf8Val);
-	D8 = inp(PCI_DATA_PORT + Stride);
-	return D8;
-}
-void PciWrite16(struct pci_dev *pdev,u8 Register, u16 Data)
-{
-	u32 Cf8Val = GetCf8Value(pdev,Register);
-	u8 Stride = (u8)(Cf8Val &amp; 0x03);
-	Cf8Val &amp;= 0xFFFFFFFC;
-	outpd(PCI_ADDRESS_PORT, Cf8Val);
-	outpw(PCI_DATA_PORT + Stride, Data);
-}
-</code></pre>
-
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define PCI_ADDRESS_PORT 0x0CF8
+</span><span class="cp">#define PCI_DATA_PORT 0x0CFC
+</span><span class="cp"></span><span class="c1">//获取总线号、设备号、功能号和寄存器号组成的地址。
+</span><span class="c1"></span><span class="n">u32</span> <span class="nf">GetCf8Value</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span><span class="mh">0x80000000</span><span class="o">|</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Bus</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Device</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Function</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">Register</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">u8</span> <span class="nf">PciRead8</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">u32</span> <span class="n">Cf8Val</span> <span class="o">=</span> <span class="n">GetCf8Value</span><span class="p">(</span><span class="n">pdev</span><span class="p">,</span><span class="n">Register</span><span class="p">);</span>
+	<span class="n">u8</span> <span class="n">Stride</span> <span class="o">=</span> <span class="p">(</span><span class="n">u8</span><span class="p">)(</span><span class="n">Cf8Val</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">);</span>
+	<span class="n">u8</span> <span class="n">D8</span><span class="p">;</span>
+	<span class="n">Cf8Val</span> <span class="o">&amp;=</span> <span class="mh">0xFFFFFFFC</span><span class="p">;</span> <span class="c1">//转换成 CF8 配置端口地址格式，最后 2bit 是 0
+</span><span class="c1"></span>	<span class="n">outpd</span><span class="p">(</span><span class="n">PCI_ADDRESS_PORT</span><span class="p">,</span> <span class="n">Cf8Val</span><span class="p">);</span>
+	<span class="n">D8</span> <span class="o">=</span> <span class="n">inp</span><span class="p">(</span><span class="n">PCI_DATA_PORT</span> <span class="o">+</span> <span class="n">Stride</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">D8</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">PciWrite16</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">,</span> <span class="n">u16</span> <span class="n">Data</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">u32</span> <span class="n">Cf8Val</span> <span class="o">=</span> <span class="n">GetCf8Value</span><span class="p">(</span><span class="n">pdev</span><span class="p">,</span><span class="n">Register</span><span class="p">);</span>
+	<span class="n">u8</span> <span class="n">Stride</span> <span class="o">=</span> <span class="p">(</span><span class="n">u8</span><span class="p">)(</span><span class="n">Cf8Val</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">);</span>
+	<span class="n">Cf8Val</span> <span class="o">&amp;=</span> <span class="mh">0xFFFFFFFC</span><span class="p">;</span>
+	<span class="n">outpd</span><span class="p">(</span><span class="n">PCI_ADDRESS_PORT</span><span class="p">,</span> <span class="n">Cf8Val</span><span class="p">);</span>
+	<span class="n">outpw</span><span class="p">(</span><span class="n">PCI_DATA_PORT</span> <span class="o">+</span> <span class="n">Stride</span><span class="p">,</span> <span class="n">Data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>从某个端口输入一个字节 (_inp)、一个字 (_inpw) 或一个双字 (_inpd)。</p>
-
-<pre><code>nt _inp(
+<div class="highlight"><pre class="chroma">nt _inp(
    unsigned short port
 );
 unsigned short _inpw(
@@ -489,17 +471,12 @@ unsigned short _inpw(
 );
 unsigned long _inpd(
    unsigned short port
-);
-</code></pre>
-
+);</pre></div>
 <p>_outp、_outpw 和 _outpd 功能分别，对指定的输出端口写字节、字和一个双字。</p>
 
 <p>在 linux 中读 pci 配置空间读写，可以直接调用内核 api. 等</p>
-
-<pre><code>pci_read_config_byte()
-pci_read_config_word()
-</code></pre>
-
+<div class="highlight"><pre class="chroma">pci_read_config_byte()
+pci_read_config_word()</pre></div>
 <p>另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。
 outb() I/O 上写入 8 位数据 ( 1 字节 )；
 outw() I/O 上写入 16 位数据 ( 2 字节 )；
@@ -746,6 +723,8 @@ inw 从 I/O 端口读取一个字。</p>
 
 
 
+
+  <script src="/js/"></script>
 
 
 </body>

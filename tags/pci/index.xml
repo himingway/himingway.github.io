@@ -17,7 +17,7 @@
       <pubDate>Thu, 12 Sep 2019 21:47:15 +0800</pubDate>
       
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/</guid>
-      <description>1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示</description>
+      <description>1.1. Example 1.1.1. Config bus 1, device 2, function 3, reg byte 47, data to 0xff; CONFIG_ADDRESS (CF8h) Transaction： ADDRESS 周期：ADDRESS 为 32&#39;hCF8，Command 为 4&#39;b0011（I/O 写</description>
     </item>
     
     <item>

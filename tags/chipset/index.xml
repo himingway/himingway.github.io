@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>PCI Fundamental and PCI Transaction Ordering (2)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</link>
+      <pubDate>Mon, 09 Sep 2019 00:01:41 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</guid>
+      <description>2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令</description>
+    </item>
+    
+    <item>
       <title>PCI Fundamental and PCI Transaction Ordering (1)</title>
       <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</link>
       <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
@@ -44,7 +53,7 @@
       <pubDate>Sun, 08 Sep 2019 00:02:12 +0800</pubDate>
       
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</guid>
-      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) 其它： PCI笔记 PCI Configuration</description>
+      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) 其它： PCI笔记 PCI Configuration PCI Ordering</description>
     </item>
     
   </channel>

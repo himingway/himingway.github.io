@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Sep 2019 21:47:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Sep 2019 01:10:28 +0800</lastBuildDate>
     
 	<atom:link href="https://himingway.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PCI Ordering</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/</link>
+      <pubDate>Fri, 13 Sep 2019 01:10:28 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/</guid>
+      <description>1. Producer/Consumer 模型的完整阐述 PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。 首先介绍下 Producer/Consumer 模型</description>
+    </item>
     
     <item>
       <title>PCI Configuration</title>
@@ -62,7 +71,7 @@
       <pubDate>Sun, 08 Sep 2019 00:02:12 +0800</pubDate>
       
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</guid>
-      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) 其它： PCI笔记 PCI Configuration</description>
+      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) 其它： PCI笔记 PCI Configuration PCI Ordering</description>
     </item>
     
   </channel>

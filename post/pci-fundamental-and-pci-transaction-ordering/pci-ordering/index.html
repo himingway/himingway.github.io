@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PCI Fundamental and PCI Transaction Ordering (2) - ICNote - A Site for Sharing Notes about IC</title>
+  <title>PCI Ordering - ICNote - A Site for Sharing Notes about IC</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,8 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="himingway" />
-  <meta name="description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令" />
-<meta name="keywords" content="PCI, Ordering" />
+  <meta name="description" content="1. Producer/Consumer 模型的完整阐述 PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。 首先介绍下 Producer/Consumer 模型" />
+<meta name="keywords" content="" />
 
 
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.58.1" />
 
 
-<link rel="canonical" href="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/" />
+<link rel="canonical" href="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/" />
 
 
 
@@ -59,26 +59,26 @@
 <link rel="stylesheet" href="/css/">
 
 
-<meta property="og:title" content="PCI Fundamental and PCI Transaction Ordering (2)" />
-<meta property="og:description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令" />
+<meta property="og:title" content="PCI Ordering" />
+<meta property="og:description" content="1. Producer/Consumer 模型的完整阐述 PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。 首先介绍下 Producer/Consumer 模型" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/" />
-<meta property="article:published_time" content="2019-09-09T00:01:41+08:00" />
-<meta property="article:modified_time" content="2019-09-10T00:53:29+08:00" />
-<meta itemprop="name" content="PCI Fundamental and PCI Transaction Ordering (2)">
-<meta itemprop="description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令">
+<meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/" />
+<meta property="article:published_time" content="2019-09-13T01:10:28+08:00" />
+<meta property="article:modified_time" content="2019-09-13T01:10:28+08:00" />
+<meta itemprop="name" content="PCI Ordering">
+<meta itemprop="description" content="1. Producer/Consumer 模型的完整阐述 PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。 首先介绍下 Producer/Consumer 模型">
 
 
-<meta itemprop="datePublished" content="2019-09-09T00:01:41&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-10T00:53:29&#43;08:00" />
-<meta itemprop="wordCount" content="1048">
+<meta itemprop="datePublished" content="2019-09-13T01:10:28&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-13T01:10:28&#43;08:00" />
+<meta itemprop="wordCount" content="2515">
 
 
 
-<meta itemprop="keywords" content="PCI,Chipset," />
+<meta itemprop="keywords" content="," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PCI Fundamental and PCI Transaction Ordering (2)"/>
-<meta name="twitter:description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令"/>
+<meta name="twitter:title" content="PCI Ordering"/>
+<meta name="twitter:description" content="1. Producer/Consumer 模型的完整阐述 PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。 首先介绍下 Producer/Consumer 模型"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -302,14 +302,13 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">PCI Fundamental and PCI Transaction Ordering (2)</h1>
+      <h1 class="post-title">PCI Ordering</h1>
       
       <div class="post-meta">
-        <time datetime="2019-09-09" class="post-time">
-          2019-09-09
+        <time datetime="2019-09-13" class="post-time">
+          2019-09-13
         </time>
         <div class="post-category">
-            <a href="https://himingway.github.io/categories/pci/"> PCI </a>
             
           </div>
         
@@ -331,10 +330,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#2-pci-protocol">2. PCI Protocol</a>
+<li><a href="#1-producer-consumer-模型的完整阐述">1. Producer/Consumer 模型的完整阐述</a></li>
+<li><a href="#2-producer-consumer-潜在的-deadlock-的例子">2. Producer/Consumer 潜在的 deadlock 的例子</a>
 <ul>
-<li><a href="#2-1-bus-command">2.1. Bus Command</a></li>
-<li><a href="#2-2-basic-transfer-control">2.2. Basic Transfer Control</a></li>
+<li><a href="#2-1-lock-cycle-对其他-transaction-约束">2.1. Lock cycle 对其他 transaction 约束</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -346,141 +345,159 @@
     <div class="post-content">
       
 
-<h2 id="2-pci-protocol">2. PCI Protocol</h2>
+<h2 id="1-producer-consumer-模型的完整阐述">1. Producer/Consumer 模型的完整阐述</h2>
 
-<h3 id="2-1-bus-command">2.1. Bus Command</h3>
+<p>PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。</p>
 
-<p><img src="/assets/20190909234959.png" alt="" /></p>
+<p>首先介绍下 Producer/Consumer 模型。</p>
 
-<p>PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。</p>
+<p><img src="/assets/20190913010642.png" alt="" /></p>
+
+<ul>
+<li>Data：共享数据缓冲，由生产者写入，消费者读出的区域</li>
+<li>Producer：生产者，数据的提供方，产生所需要产生的数据，当 Consumer 将数据读出时，再将数据写入缓冲中。</li>
+<li>Comsumer：消费者，数据的使用方，消费者将消费数据，在生产者将数据写入到共享缓存后，再获得数据。</li>
+<li>Flag：Producer 通过对 Flag 位置 1 通知消费者，已经将数据写入缓存中，Consumer 通过该位判断数据缓冲是否有效。1 表示在数据缓冲中的数据已经被 Producer 写入；0 表示没有被写入。当 Consumer 读到 Flag 位为 1 时，则将 Flag 位置 0。</li>
+<li>Status：Consumer 通过对该位写 1 通知给 Producer，已经将数据从缓冲中读出；Producer 通过该位判断数据缓冲是否有效，1 表示在数据缓冲中的数据已经被 Consumer 读出；0 表示没有被读出。当 Producer 读到 Status 为 1 时，将 Status 置为 0；</li>
+</ul>
+
+<p>下面根据 PCI 协议的 Order 来验证 Producer/Consumer 模型的正确性：</p>
 
 <table>
 <thead>
 <tr>
-<th>C/BE[3:0]#</th>
-<th>命令类型</th>
-<th>说明</th>
+<th>步骤</th>
+<th>操作</th>
+<th>描述</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>0000</td>
-<td>Interrupt Acknowledge</td>
-<td>中断响应总线事务读取当前挂接在 PCI 总线上的中断控制器的中断向量号。目前大多数处理器系统的中断控制器都不挂接在 PCI 总线上，因此这种总线事务很少使用</td>
+<td>1</td>
+<td>Producer 通过 PCI 桥，使用 posted 方式将数据写入 Data 中</td>
+<td>Producer 和 Data 不在同一条总线上，因此生产者首先使用 posted 写周期将数据写入 PCI 桥，并不会立刻到达 Data</td>
 </tr>
 
 <tr>
-<td>0001</td>
-<td>Special Cycle</td>
-<td>HOST 主桥可以使用 Special Cycle 事务在 PCI 总线上进行信息广播</td>
+<td>2</td>
+<td>Producer 将 Flag 位  设置为 1</td>
+<td>Flag 位和 Producer 在同一条总线上，Flag 位会被立刻置位</td>
 </tr>
 
 <tr>
-<td>0010</td>
-<td>I/O Read</td>
-<td>HOST 主桥可以使用该总线事务对 PCI 设备的 LO 地址空间进行读操作。目前多数 PCI 设备都不支持 O 地址空间，而仅支持存储器地址空间，但是仍有部分 PCI 设备同时包含 LO 地址空间和存储器地址空间</td>
+<td>3</td>
+<td>Producer 轮询 Status 状态位，判断 Data 中数据是否被 Consumer 处理完毕</td>
+<td>Status 位和 Producer 在  同一条总线上，Producer 可以立刻获得 Status 位的信息</td>
 </tr>
 
 <tr>
-<td>0011</td>
-<td>I/O Write</td>
-<td>对 PCⅠ总线的 LO 地址空间进行写操作</td>
+<td>4</td>
+<td>Consumer 轮询 Flag 状态位</td>
+<td>Flag 位和 Consumer 不在同一条总线上，Consumer 首先将读请求发向 PCI 桥，PCI 桥将使用 Delayed 读总线请求周期获得数据，同时可能使用 “Retry” 周期结束 Consumer 的请求。为了保证 Producer/Consumer 模型的正确运行，PCI 桥需要进行一下操作：1.PCI 桥首先将与读请求相同方向的 Posted 写请求发送出去。2.PCI 桥读取 Flag 位。  此时 DRR（延迟读请求）  就成为了一个 DRC（延迟读完成）。3.PCI 桥将所有的 Posted 写请求发送到 PCI 总线 0 上。4.PCI 桥将 Flag 信息发送给 Consumer。</td>
 </tr>
 
 <tr>
-<td>0100</td>
-<td>Reserved</td>
-<td>Reserved</td>
+<td>5</td>
+<td>Consumer 发现 Flag 位被 Producer 置为 1，则将 Flag 位清零</td>
+<td>清零操作首先发向 PCI 桥，并不会立刻到达 Flag 位</td>
 </tr>
 
 <tr>
-<td>0101</td>
-<td>Reserved</td>
-<td>Reserved</td>
+<td>6</td>
+<td>Consumer 从数据缓冲中干活的数据</td>
+<td>Consumer 和数据缓冲在一条总线上，可直接获得数据</td>
 </tr>
 
 <tr>
-<td>0110</td>
-<td>Memory Read</td>
-<td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行读操作。PCI 设备也可以使用该总线事务读取处理器的存储器空间</td>
+<td>7</td>
+<td>Consumer 处理完毕这些数据后，将 Status 位置 1</td>
+<td>Consumer 和 Status 位不在同一条总线上，因此 Producer 首先使用 Posted 写周期将数据写入 PCI 桥，并不会立刻更新 Status 位</td>
 </tr>
 
 <tr>
-<td>0111</td>
-<td>Memory Write</td>
-<td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行写操作。PCI 设备也可以使用该总线事务向处理器的存储器空间进行写操作</td>
+<td>8</td>
+<td>Consumer 继续轮询 Flag 位，确定 Data 中是否有新的数据需要处理</td>
+<td>Consumer 再一次读取 Flag 位时，需要跨越 PCI 桥，需要将 PCI 桥中排队的 Flag 位和 Status 位更新事务刷新出去</td>
 </tr>
 
 <tr>
-<td>1000</td>
-<td>Reserved</td>
-<td>Reserved</td>
+<td>9</td>
+<td>Producer 读取 Status 位，并依此判断 Consumer 是否处理完毕 Data 中断数据</td>
+<td>Producer 和 Status 位在同一条总线上，因此可以立即获得 Status 位的信息</td>
 </tr>
 
 <tr>
-<td>1001</td>
-<td>Reserved</td>
-<td>Reserved</td>
+<td>10</td>
+<td>如果 Status 位为 1，则 Producer 将 Status 位清零</td>
+<td>Producer 和 Status 位在同一条总线上，Status 位立即被更新</td>
 </tr>
 
 <tr>
-<td>1010</td>
-<td>Configuration Read</td>
-<td>HOST 主桥可以对 PCl 设备的配置空间进行读操作。</td>
-</tr>
-
-<tr>
-<td>1001</td>
-<td>Configuration Write</td>
-<td>HOST 主桥可以对 PCl 设备的配置空间进行写操作。</td>
-</tr>
-
-<tr>
-<td>1100</td>
-<td>Memory Read Multiple</td>
-<td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行多行读操作</td>
-</tr>
-
-<tr>
-<td>1001</td>
-<td>Dual Address Cycle</td>
-<td>PCI 总线支持 64 位地址，处理器或者其他 PCI 设备访问 64 位 PCI 总线地址时，必须使用双地址周期产生 64 位的 PCI 总线地址。PCI 设备使用 DMA 读写方式访问 64 位的存储器地址时，也可以使用该总线事务</td>
-</tr>
-
-<tr>
-<td>1000</td>
-<td>Memory Read Line</td>
-<td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行单行读操作</td>
-</tr>
-
-<tr>
-<td>1001</td>
-<td>Memory Write and Invalidate</td>
-<td>存储器写并无效操作，与存储器写不同，PCI 设备可以使用该总线事务对主存储器空间进行写操作。该总线事务将数据写人主存储器的同时，将对应 Cache 行中的数据“使无效”</td>
+<td>11</td>
+<td>重启 Producer/Consumer 模型</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="2-2-basic-transfer-control">2.2. Basic Transfer Control</h3>
+<h2 id="2-producer-consumer-潜在的-deadlock-的例子">2. Producer/Consumer 潜在的 deadlock 的例子</h2>
 
-<p><img src="/assets/20190910001455.png" alt="" /></p>
+<p>如果 Producer/Consumer 模型没有确保 PCI 协议的 Order，例如没有保证 Read Flush Write<br />
+即：没有保证读操作将同方向的写操作刷新出去：</p>
 
-<p>下面介绍 PCI 基本的传输协议：</p>
+<blockquote>
+<p>A read transaction must push ahead of it through the bridge any posted writes originating on the same side of the bridge and posted before the read. Before the read transaction can complete on its originating bus, it must pull out of the bridge any posted writes that originated on the opposite side and were posted before the read command completes on the read-destination bus.</p>
+</blockquote>
+
+<p>那么：</p>
+
+<p><img src="/assets/20190913010745.png" alt="" /></p>
 
 <ul>
-<li>当 FRAME# 和 IRDY# 同时无效的时候，PCI BUS 处于闲置（IDLE）状态。</li>
-<li>FRANE#有效，表明数据开始传输：
-
-<ul>
-<li>当 FRAME# 信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。</li>
-<li>当 IRDY# 和 TRDY# 同时有效的时候，PCI BUS 为数据周期（Data Phase）。</li>
-<li>当 IRDY# 或 TRDY# 的时候，PCI BUS 为等待周期（Wait Cycle）。</li>
-<li>当所需要的数据准备好的时候，xRDY# 必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY# 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY# 有效）。</li>
-</ul></li>
-<li>当 FRAME# 无效，IRDY# 有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY# 和 TRDY# 必须是有效的，若 TRDY# 无效，则等待 TRDY# 有效）。</li>
-<li>当最后一笔传输完成后，FRAME# 和 IRDY# 同时无效。</li>
+<li>结合 Producer/Consumer 模型的具体过程步骤，首先看步骤 4：</li>
 </ul>
+
+<p>假如 PCI 桥没有使 DRC 将 Posted 写请求（PCI 桥中缓存向 Data 的 Posted 写操作）刷新出去，而是 DRC 先出现在总线 0 上，那么 Consumer 首先获得的是 Flag 为 1 的信息，此时 PCI 桥中缓存并没有完成向 Data 的 Posted 写操作，Consumer 将误认为 Producer 已经将写事务写到 Data 中，如果此时 Consumer 读 Data 中的数据，将会获得错误的数据。</p>
+
+<ul>
+<li>结合 Producer/Consumer 模型的具体过程步骤，首先看步骤 8：</li>
+</ul>
+
+<p>Consumer 对 Flag 进行进行 Non-Posted 读。假如 PCI 桥接收到 Consumer 的读请求，没有将 PCI 桥中排队的 Flag 位和 Status 位更新事务刷新出去，而是 Consumer 的对 Flag 的读请求首先出现在总线 1 上，那么 Consumer 首先获得的是 Flag 为 1 的信息，而不是预期的 Flag 为 0 的信息，那么 Consumer 认为 Data 中仍有数据要 Consume 掉（实际上没有），将会得到错误的信息。</p>
+
+<hr />
+
+<ul>
+<li>扩展：</li>
+</ul>
+
+<p>Producer/Consumer 模型所要求的 Order 是对 Bridge 要求的，对于 Simple Device（除了 HOST 和 PCI 桥，只要时直接和 CPU 相连，都可以看作 Simple Device。Simple Device 不能对写操作进行转发，只有桥才可以）的要求是：PCI 设备的 Target State Machine 和 Master State Machine 必须是相互独立的。也就是说，设备内部的 Target 事务不能依赖于设备内部的 Master 事务发生。</p>
+
+<p>考虑到以下例子：</p>
+
+<p><img src="/assets/20190913010802.png" alt="" /></p>
+
+<p>当 Bridge 向 Target 发送一个 Posted 写事务时，Target 希望在接受这个写事务之前读到 Memeory 的一个值。Target 向 Memory 发送 Posted 读事务，但是当读事务通过 Bridge 将数据传回来的时候，希望对 Posted 写事务采取刷新操作。但是 Target 在没有接收读事务之前，不会接受这个 Posted 写事务。这样会产生 Deadlock。</p>
+
+<p>Bridge 向 Target 发送 Posted 写事务，对这个 PCI 设备而言是作为 Target 接受 Bridge 发过来的数据；Target 向 Memory 发送 Non-Posted 读事务，对于这个 PCI 设备而言是作为 Master 从 Memory（Bridge）读取数据。当 PCI 设备既作为 Target 又作为 Master 相关的事务数据产生依赖时（也就是说这两个 Master 和 Target 状态机不是完全独立的），将会发生死锁。</p>
+
+<h3 id="2-1-lock-cycle-对其他-transaction-约束">2.1. Lock cycle 对其他 transaction 约束</h3>
+
+<p>PCI 桥可以将 LOCK 总线事务从上游传递到下游，但是不能将 LOCK 总线事务从下游传递到上游。</p>
+
+<p>当 PCI 桥从一个 Master 接收到一个 LOCK 总线事务后，将这个总线事务发送到下游总线的目标设备。如果 LOCK 总线事务为 Non-Posted 总线事务，PCI 桥并不能完成这个 LOCK 总线事务，因为 PCI 桥还需要将 Non-Posted 总线请求对应的总线完成信息传递给发起者之后，LOCK 总线事务才更够完成。</p>
+
+<p>在 PCI 桥没有将 LOCK 总线事务完成传递给发起者之前的这段时间里，PCI 桥仅接受这个发起者 LOCK 总线事务的主设备的总线请求，而重试其他主设备发出的总线事务。PCI 桥不会使用 Delayed 总线事务接收其他 Non-Poested 总线事务，也不会暂存这些总线事务。</p>
+
+<p>LOCK 总线事务从 PCI 桥的上游到达 PCI 桥，在 PCI 桥将这个 LOCK 总线事务传递到下游总线这段时间里，PCI 桥需要：</p>
+
+<ol>
+<li>将所有同方向的 PMW（Posted Memory Write）总线事务刷新到下游总线。</li>
+<li>对于 Delayed 总线事务，丢弃所有暂存在 PCI 桥中的 Delayed 总线事务，允许 LOCK 总线事务超越任何读写请求。或者完成所有的 Delayed 读写请求，再讲过 LOCK 总线事务发送给下游总线。</li>
+</ol>
+
+<p>在 PCI 桥的下游总线接收 LOCK 总线请求之前，PCI 桥仍然可以暂存来自下游总线的数据请求。在下游总线接受 LOCK 总线请求后，并且必须完成发向上游总线的 PWM（Posted Memory Write）, DRC（Delay Read Complete）和 DWC（Delay Write Complete），PCI 桥不能接受任何来自下游总线的数据请求，直到发起 LOCK 总线请求的主设备解锁。</p>
 
 <hr />
 
@@ -500,10 +517,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2019-09-10
-      
-        
-        
+      2019-09-13
       
     </span>
   </p>
@@ -520,30 +534,15 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://himingway.github.io/tags/pci/">PCI</a>
-          <a href="https://himingway.github.io/tags/chipset/">Chipset</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-note/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">PCI Note</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/">
-            <span class="next-text nav-default">PCI Fundamental and PCI Transaction Ordering (1)</span>
+          <a class="next" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/">
+            <span class="next-text nav-default">PCI Configuration</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -581,7 +580,7 @@
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/";
+      this.page.url = "https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/";
     };
     function load_disqus() {
       

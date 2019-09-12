@@ -64,13 +64,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/" />
 <meta property="article:published_time" content="2019-09-12T21:47:15+08:00" />
-<meta property="article:modified_time" content="2019-09-13T00:16:46+08:00" />
+<meta property="article:modified_time" content="2019-09-13T01:03:20+08:00" />
 <meta itemprop="name" content="PCI Configuration">
 <meta itemprop="description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示">
 
 
 <meta itemprop="datePublished" content="2019-09-12T21:47:15&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-13T00:16:46&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-13T01:03:20&#43;08:00" />
 <meta itemprop="wordCount" content="2256">
 
 
@@ -582,12 +582,17 @@ unsigned long _inpd(
 pci_read_config_word()</pre></td></tr></table>
 </div>
 </div>
-<p>另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。
-outb() I/O 上写入 8 位数据 ( 1 字节 )；
-outw() I/O 上写入 16 位数据 ( 2 字节 )；
-outl () I/O 上写入 32 位数据 ( 4 字节）；
-inb 从 I/O 端口读取一个字节；
-inw 从 I/O 端口读取一个字。</p>
+<p>另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。</p>
+
+<p>outb() I/O 上写入 8 位数据 ( 1 字节 )；</p>
+
+<p>outw() I/O 上写入 16 位数据 ( 2 字节 )；</p>
+
+<p>outl () I/O 上写入 32 位数据 ( 4 字节）；</p>
+
+<p>inb 从 I/O 端口读取一个字节；</p>
+
+<p>inw 从 I/O 端口读取一个字。</p>
 
 <hr />
 

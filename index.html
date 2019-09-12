@@ -426,7 +426,7 @@ bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间�
 
 <p>访问设备的 pci 空间时，将要访问配置空间寄存器的总线号、设备号、功能号和寄存器号以一个双字的格式写到配置地址端口 (CF8H-CFBH)，接着执行配置数据端口 (CFCH) 的读和写，向配置数据口写数据即向配置空间写数据，从配置数据口读数据即从配置空间读数据。 以下是在 DOS 下使用。</p>
 
-<pre><code class="language-c">#define PCI_ADDRESS_PORT 0x0CF8
+<pre><code class="language-cpp">#define PCI_ADDRESS_PORT 0x0CF8
 #define PCI_DATA_PORT 0x0CFC
 //获取总线号、设备号、功能号和寄存器号组成的地址。
 u32 GetCf8Value(struct pci_dev *pdev,u8 Register)

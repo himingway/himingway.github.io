@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PCI · ICNote - A Site for Sharing Notes about IC</title>
+  <title>PCI Fundamental and PCI Transaction Ordering (3) - ICNote - A Site for Sharing Notes about IC</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,8 +23,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="himingway" />
-  <meta name="description" content="A Site for Sharing Notes about IC" />
-  <meta name="keywords" content="IC, note, cpu, digit" />
+  <meta name="description" content="3. PCI Addressing 3.1. I/O Space Decoding 当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。 当 AD[1::0] 为 2&amp;rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1； 当 AD[1::0]" />
+<meta name="keywords" content="PCI, Ordering" />
+
 
 
 
@@ -34,8 +35,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://himingway.github.io/tags/pci/" />
-<link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/tags/pci/index.xml%20https://himingway.github.io/tags/pci/index.xml%7d" rel="alternate" type="application/rss+xml" title="ICNote - A Site for Sharing Notes about IC" />
+<link rel="canonical" href="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/" />
 
 
 
@@ -59,18 +59,26 @@
 <link rel="stylesheet" href="/css/">
 
 
-<meta property="og:title" content="PCI" />
-<meta property="og:description" content="A Site for Sharing Notes about IC" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://himingway.github.io/tags/pci/" />
+<meta property="og:title" content="PCI Fundamental and PCI Transaction Ordering (3)" />
+<meta property="og:description" content="3. PCI Addressing 3.1. I/O Space Decoding 当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。 当 AD[1::0] 为 2&rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1； 当 AD[1::0]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/" />
+<meta property="article:published_time" content="2019-10-15T23:42:40+08:00" />
+<meta property="article:modified_time" content="2019-10-15T23:42:40+08:00" />
+<meta itemprop="name" content="PCI Fundamental and PCI Transaction Ordering (3)">
+<meta itemprop="description" content="3. PCI Addressing 3.1. I/O Space Decoding 当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。 当 AD[1::0] 为 2&rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1； 当 AD[1::0]">
 
-<meta property="og:updated_time" content="2019-10-15T23:42:40+08:00" />
-<meta itemprop="name" content="PCI">
-<meta itemprop="description" content="A Site for Sharing Notes about IC">
 
+<meta itemprop="datePublished" content="2019-10-15T23:42:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-15T23:42:40&#43;08:00" />
+<meta itemprop="wordCount" content="409">
+
+
+
+<meta itemprop="keywords" content="PCI,Chipset," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PCI"/>
-<meta name="twitter:description" content="A Site for Sharing Notes about IC"/>
+<meta name="twitter:title" content="PCI Fundamental and PCI Transaction Ordering (3)"/>
+<meta name="twitter:description" content="3. PCI Addressing 3.1. I/O Space Decoding 当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。 当 AD[1::0] 为 2&rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1； 当 AD[1::0]"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -291,94 +299,150 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-
-<section id="archive" class="archive">
-  
+          <article class="post bg-white">
     
-      <div class="archive-title tag">
-        <h2 class="archive-name">标签： PCI</h2>
+    <header class="post-header">
+      <h1 class="post-title">PCI Fundamental and PCI Transaction Ordering (3)</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-10-15" class="post-time">
+          2019-10-15
+        </time>
+        <div class="post-category">
+            <a href="https://himingway.github.io/categories/pci/"> PCI </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
       </div>
+    </header>
+
     
-  
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#3-pci-addressing">3. PCI Addressing</a>
+<ul>
+<li><a href="#3-1-i-o-space-decoding">3.1. I/O Space Decoding</a></li>
+<li><a href="#3-2-memory-address-space">3.2. Memory Address Space</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
 
-  
-    <div class="archive-post">
-      <time datetime="2019-10-15" class="archive-post-time">
-        2019-10-15
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/" class="archive-post-link">
-          PCI Fundamental and PCI Transaction Ordering (3)
-        </a>
-      </span>
+    
+    <div class="post-content">
+      
+
+<h2 id="3-pci-addressing">3. PCI Addressing</h2>
+
+<h3 id="3-1-i-o-space-decoding">3.1. I/O Space Decoding</h3>
+
+<p><img src="http://notes.iaikx.com/image/20191015232130.png" alt="" /></p>
+
+<p>当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。</p>
+
+<ul>
+<li>当 AD[1::0] 为 2&rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1；</li>
+<li>当 AD[1::0] 为 2&rsquo;b01 时，BE#的第二位必须为 0 且第一位必须为 1，或者 BE#全为 1；</li>
+<li>当 AD[1::0] 为 2&rsquo;b10 时，BE#的第三位必须为 0 且第一位、第二位必须为 1，或者 BE#全为 1；</li>
+<li>当 AD[1::0] 为 2&rsquo;b11 时，BE#的第四位必须为 0 且第一位、第二位、第三位必须为 1，或者 BE#全为 1；</li>
+</ul>
+
+<h3 id="3-2-memory-address-space">3.2. Memory Address Space</h3>
+
+<p><img src="http://notes.iaikx.com/image/20191015232711.png" alt="" /></p>
+
+<p>与 I/O 操作不同，当 PCI 对 Memory 进行操作，地址时以 Byte 对齐的，AD[1::0] 在地址解码中代表不同的含义，它代表这突发模式的传输顺序。</p>
+
+<ul>
+<li>AD[1::0] 为 2&rsquo;b00，Memory 突发顺序为线性递增。</li>
+<li>AD[1::0] 为 2&rsquo;b01，保留位。</li>
+<li>AD[1::0] 为 2&rsquo;b10，CacheLine Wrap 模式。</li>
+<li>AD[1::0] 为 2&rsquo;b11，保留位。</li>
+</ul>
+
+<p>Cacheline Wrap 的工作模式与 PCI 设备的 CacheLine Size Register 设置的值有关。</p>
+
+<p>例，当 CacheLine Size Register 为 16Bytes，地址是 16Byte 对齐的：</p>
+
+<ul>
+<li>08h -&gt; 0Ch -&gt; 00h -&gt; 04h</li>
+<li>18h -&gt; 1Ch -&gt; 10h -&gt; 14h</li>
+</ul>
+
+<hr />
+
+<ul>
+<li><a href="/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/">本系列文章目录</a></li>
+</ul>
+
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">himingway</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2019-10-15
+      
+    </span>
+  </p>
   
-    <div class="archive-post">
-      <time datetime="2019-09-12" class="archive-post-time">
-        2019-09-12
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/" class="archive-post-link">
-          PCI Configuration
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2019-09-09" class="archive-post-time">
-        2019-09-09
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-note/" class="archive-post-link">
-          PCI Note
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2019-09-09" class="archive-post-time">
-        2019-09-09
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/" class="archive-post-link">
-          PCI Fundamental and PCI Transaction Ordering (2)
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2019-09-08" class="archive-post-time">
-        2019-09-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/" class="archive-post-link">
-          PCI Fundamental and PCI Transaction Ordering (1)
-        </a>
-      </span>
-    </div>
-  
-    <div class="archive-post">
-      <time datetime="2019-09-08" class="archive-post-time">
-        2019-09-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/" class="archive-post-link">
-          Table of Content for PCI Fundamental and PCI Transaction Ordering
-        </a>
-      </span>
-    </div>
-  
-</section>
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
 
 
+    
+    
 
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://himingway.github.io/tags/pci/">PCI</a>
+          <a href="https://himingway.github.io/tags/chipset/">Chipset</a>
+          
+        </div>
 
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/">
+            <span class="next-text nav-default">PCI Ordering</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
 
-
-  
-  
-  
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
@@ -387,14 +451,45 @@
   
 
   
-  
 
   
   
 
+  
 
+  
 
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    显示 Disqus 评论
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_config = function () {
+      this.page.url = "https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/";
+    };
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
 
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'icnote';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+    
+
+  
 
         </div>
       </div>

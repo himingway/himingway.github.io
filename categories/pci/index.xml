@@ -6,10 +6,19 @@
     <description>Recent content in PCI on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Sep 2019 21:47:15 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 23:42:40 +0800</lastBuildDate>
     
 	<atom:link href="https://himingway.github.io/categories/pci/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PCI Fundamental and PCI Transaction Ordering (3)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/</link>
+      <pubDate>Tue, 15 Oct 2019 23:42:40 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/</guid>
+      <description>3. PCI Addressing 3.1. I/O Space Decoding 当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。 当 AD[1::0] 为 2&amp;rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1； 当 AD[1::0]</description>
+    </item>
     
     <item>
       <title>PCI Configuration</title>
@@ -53,7 +62,7 @@
       <pubDate>Sun, 08 Sep 2019 00:02:12 +0800</pubDate>
       
       <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</guid>
-      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) 其它： PCI笔记 PCI Configuration PCI Ordering</description>
+      <description>PCI Fundamental and PCI Transaction Ordering (1) PCI Fundamental and PCI Transaction Ordering (2) PCI Fundamental and PCI Transaction Ordering (3) 其它： PCI笔记 PCI Configuration PCI Ordering</description>
     </item>
     
   </channel>

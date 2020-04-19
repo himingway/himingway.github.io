@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ICNote - A Site for Sharing Notes about IC</title>
@@ -6,7 +6,7 @@
     <description>Recent content on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Oct 2019 23:42:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 21:38:52 +0800</lastBuildDate>
     
         <atom:link href="https://himingway.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,46 +18,45 @@
       
       <guid>https://himingway.github.io/about/</guid>
       
-        <description>
-
-&lt;h2 id=&#34;关于博主&#34;&gt;关于博主&lt;/h2&gt;
-
+        <description>&lt;h2 id=&#34;关于博主&#34;&gt;关于博主&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;吉林大学 电子科学与工程学院 学士&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;西安电子科技大学 微电子学院 硕士&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;数字IC设计工程师&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;CPU Asic Designer&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;吉林大学 电子科学与工程学院 学士&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;西安电子科技大学 微电子学院 硕士&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数字IC设计工程师&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CPU Asic Designer&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h3 id=&#34;博文原则&#34;&gt;博文原则&lt;/h3&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;博客内容以原创为主，翻译和转载为辅；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;原创内容若有参考他人文章，在文末给出参考文章链接；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;翻译文章在文章开头给出原文链接；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对于转载的文章，尊重作者版权，遵守转载协议；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;博客内容以原创为主，翻译和转载为辅；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;原创内容若有参考他人文章，在文末给出参考文章链接；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;翻译文章在文章开头给出原文链接；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于转载的文章，尊重作者版权，遵守转载协议；&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h3 id=&#34;版权问题&#34;&gt;版权问题&lt;/h3&gt;
-
 &lt;p&gt;本博客首发的原创作品，采用 “CC BY-NC-ND 4.0” 版权协议。&lt;/p&gt;
-
 &lt;h3 id=&#34;版权声明如下&#34;&gt;版权声明如下：&lt;/h3&gt;
-
 &lt;ul&gt;
 &lt;li&gt;允许自由分享、修改博文内容；&lt;/li&gt;
 &lt;li&gt;转载需保留署名；&lt;/li&gt;
 &lt;li&gt;严禁他人进行商业性使用；&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h3 id=&#34;对使用者的建议如下&#34;&gt;对使用者的建议如下：&lt;/h3&gt;
-
 &lt;ul&gt;
 &lt;li&gt;若要转载，请留言说明，并在文末注明出处；&lt;/li&gt;
 &lt;/ul&gt;
@@ -66,13 +65,588 @@
     </item>
     
     <item>
-      <title>Posts</title>
-      <link>https://himingway.github.io/post/</link>
+      <title>PCI Fundamental and PCI Transaction Ordering (3)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/</link>
       <pubDate>Tue, 15 Oct 2019 23:42:40 +0800</pubDate>
       
-      <guid>https://himingway.github.io/post/</guid>
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/</guid>
       
-        <description></description>
+        <description>&lt;h2 id=&#34;3-pci-addressing&#34;&gt;3. PCI Addressing&lt;/h2&gt;
+&lt;h3 id=&#34;31-io-space-decoding&#34;&gt;3.1. I/O Space Decoding&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20191015232130.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当 PCI 为 I/O 读写时，如果 PCI 传输小于一个 DWORD，BE#必须和 AD[1::0] 相匹配。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 AD[1::0] 为 2&amp;rsquo;b00 时，BE#的第一位必须为 0，或者 BE#全为 1；&lt;/li&gt;
+&lt;li&gt;当 AD[1::0] 为 2&amp;rsquo;b01 时，BE#的第二位必须为 0 且第一位必须为 1，或者 BE#全为 1；&lt;/li&gt;
+&lt;li&gt;当 AD[1::0] 为 2&amp;rsquo;b10 时，BE#的第三位必须为 0 且第一位、第二位必须为 1，或者 BE#全为 1；&lt;/li&gt;
+&lt;li&gt;当 AD[1::0] 为 2&amp;rsquo;b11 时，BE#的第四位必须为 0 且第一位、第二位、第三位必须为 1，或者 BE#全为 1；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-memory-address-space&#34;&gt;3.2. Memory Address Space&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20191015232711.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;与 I/O 操作不同，当 PCI 对 Memory 进行操作，地址时以 Byte 对齐的，AD[1::0] 在地址解码中代表不同的含义，它代表这突发模式的传输顺序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AD[1::0] 为 2&amp;rsquo;b00，Memory 突发顺序为线性递增。&lt;/li&gt;
+&lt;li&gt;AD[1::0] 为 2&amp;rsquo;b01，保留位。&lt;/li&gt;
+&lt;li&gt;AD[1::0] 为 2&amp;rsquo;b10，CacheLine Wrap 模式。&lt;/li&gt;
+&lt;li&gt;AD[1::0] 为 2&amp;rsquo;b11，保留位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cacheline Wrap 的工作模式与 PCI 设备的 CacheLine Size Register 设置的值有关。&lt;/p&gt;
+&lt;p&gt;例，当 CacheLine Size Register 为 16Bytes，地址是 16Byte 对齐的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;08h -&amp;gt; 0Ch -&amp;gt; 00h -&amp;gt; 04h&lt;/li&gt;
+&lt;li&gt;18h -&amp;gt; 1Ch -&amp;gt; 10h -&amp;gt; 14h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>PCI Ordering</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/</link>
+      <pubDate>Fri, 13 Sep 2019 01:10:28 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/</guid>
+      
+        <description>&lt;h2 id=&#34;1-producerconsumer-模型的完整阐述&#34;&gt;1. Producer/Consumer 模型的完整阐述&lt;/h2&gt;
+&lt;p&gt;PCI 定义的 Order 必须保证 Producer/Consumer 模型的正确操作（如果使用某种 Order，不能保证 Producer/Consumer 模型正确，那么这个 Order 不符合 PCI 规范）。&lt;/p&gt;
+&lt;p&gt;首先介绍下 Producer/Consumer 模型。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190913010642.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data：共享数据缓冲，由生产者写入，消费者读出的区域&lt;/li&gt;
+&lt;li&gt;Producer：生产者，数据的提供方，产生所需要产生的数据，当 Consumer 将数据读出时，再将数据写入缓冲中。&lt;/li&gt;
+&lt;li&gt;Comsumer：消费者，数据的使用方，消费者将消费数据，在生产者将数据写入到共享缓存后，再获得数据。&lt;/li&gt;
+&lt;li&gt;Flag：Producer 通过对 Flag 位置 1 通知消费者，已经将数据写入缓存中，Consumer 通过该位判断数据缓冲是否有效。1 表示在数据缓冲中的数据已经被 Producer 写入；0 表示没有被写入。当 Consumer 读到 Flag 位为 1 时，则将 Flag 位置 0。&lt;/li&gt;
+&lt;li&gt;Status：Consumer 通过对该位写 1 通知给 Producer，已经将数据从缓冲中读出；Producer 通过该位判断数据缓冲是否有效，1 表示在数据缓冲中的数据已经被 Consumer 读出；0 表示没有被读出。当 Producer 读到 Status 为 1 时，将 Status 置为 0；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面根据 PCI 协议的 Order 来验证 Producer/Consumer 模型的正确性：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;步骤&lt;/th&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Producer 通过 PCI 桥，使用 posted 方式将数据写入 Data 中&lt;/td&gt;
+&lt;td&gt;Producer 和 Data 不在同一条总线上，因此生产者首先使用 posted 写周期将数据写入 PCI 桥，并不会立刻到达 Data&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Producer 将 Flag 位  设置为 1&lt;/td&gt;
+&lt;td&gt;Flag 位和 Producer 在同一条总线上，Flag 位会被立刻置位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Producer 轮询 Status 状态位，判断 Data 中数据是否被 Consumer 处理完毕&lt;/td&gt;
+&lt;td&gt;Status 位和 Producer 在  同一条总线上，Producer 可以立刻获得 Status 位的信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Consumer 轮询 Flag 状态位&lt;/td&gt;
+&lt;td&gt;Flag 位和 Consumer 不在同一条总线上，Consumer 首先将读请求发向 PCI 桥，PCI 桥将使用 Delayed 读总线请求周期获得数据，同时可能使用 “Retry” 周期结束 Consumer 的请求。为了保证 Producer/Consumer 模型的正确运行，PCI 桥需要进行一下操作：1.PCI 桥首先将与读请求相同方向的 Posted 写请求发送出去。2.PCI 桥读取 Flag 位。  此时 DRR（延迟读请求）  就成为了一个 DRC（延迟读完成）。3.PCI 桥将所有的 Posted 写请求发送到 PCI 总线 0 上。4.PCI 桥将 Flag 信息发送给 Consumer。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Consumer 发现 Flag 位被 Producer 置为 1，则将 Flag 位清零&lt;/td&gt;
+&lt;td&gt;清零操作首先发向 PCI 桥，并不会立刻到达 Flag 位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Consumer 从数据缓冲中干活的数据&lt;/td&gt;
+&lt;td&gt;Consumer 和数据缓冲在一条总线上，可直接获得数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Consumer 处理完毕这些数据后，将 Status 位置 1&lt;/td&gt;
+&lt;td&gt;Consumer 和 Status 位不在同一条总线上，因此 Producer 首先使用 Posted 写周期将数据写入 PCI 桥，并不会立刻更新 Status 位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Consumer 继续轮询 Flag 位，确定 Data 中是否有新的数据需要处理&lt;/td&gt;
+&lt;td&gt;Consumer 再一次读取 Flag 位时，需要跨越 PCI 桥，需要将 PCI 桥中排队的 Flag 位和 Status 位更新事务刷新出去&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;Producer 读取 Status 位，并依此判断 Consumer 是否处理完毕 Data 中断数据&lt;/td&gt;
+&lt;td&gt;Producer 和 Status 位在同一条总线上，因此可以立即获得 Status 位的信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;如果 Status 位为 1，则 Producer 将 Status 位清零&lt;/td&gt;
+&lt;td&gt;Producer 和 Status 位在同一条总线上，Status 位立即被更新&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;重启 Producer/Consumer 模型&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;2-producerconsumer-潜在的-deadlock-的例子&#34;&gt;2. Producer/Consumer 潜在的 deadlock 的例子&lt;/h2&gt;
+&lt;p&gt;如果 Producer/Consumer 模型没有确保 PCI 协议的 Order，例如没有保证 Read Flush Write&lt;br&gt;
+即：没有保证读操作将同方向的写操作刷新出去：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A read transaction must push ahead of it through the bridge any posted writes originating on the same side of the bridge and posted before the read. Before the read transaction can complete on its originating bus, it must pull out of the bridge any posted writes that originated on the opposite side and were posted before the read command completes on the read-destination bus.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190913010745.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结合 Producer/Consumer 模型的具体过程步骤，首先看步骤 4：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假如 PCI 桥没有使 DRC 将 Posted 写请求（PCI 桥中缓存向 Data 的 Posted 写操作）刷新出去，而是 DRC 先出现在总线 0 上，那么 Consumer 首先获得的是 Flag 为 1 的信息，此时 PCI 桥中缓存并没有完成向 Data 的 Posted 写操作，Consumer 将误认为 Producer 已经将写事务写到 Data 中，如果此时 Consumer 读 Data 中的数据，将会获得错误的数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结合 Producer/Consumer 模型的具体过程步骤，首先看步骤 8：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consumer 对 Flag 进行进行 Non-Posted 读。假如 PCI 桥接收到 Consumer 的读请求，没有将 PCI 桥中排队的 Flag 位和 Status 位更新事务刷新出去，而是 Consumer 的对 Flag 的读请求首先出现在总线 1 上，那么 Consumer 首先获得的是 Flag 为 1 的信息，而不是预期的 Flag 为 0 的信息，那么 Consumer 认为 Data 中仍有数据要 Consume 掉（实际上没有），将会得到错误的信息。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;扩展：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Producer/Consumer 模型所要求的 Order 是对 Bridge 要求的，对于 Simple Device（除了 HOST 和 PCI 桥，只要时直接和 CPU 相连，都可以看作 Simple Device。Simple Device 不能对写操作进行转发，只有桥才可以）的要求是：PCI 设备的 Target State Machine 和 Master State Machine 必须是相互独立的。也就是说，设备内部的 Target 事务不能依赖于设备内部的 Master 事务发生。&lt;/p&gt;
+&lt;p&gt;考虑到以下例子：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190913010802.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当 Bridge 向 Target 发送一个 Posted 写事务时，Target 希望在接受这个写事务之前读到 Memeory 的一个值。Target 向 Memory 发送 Posted 读事务，但是当读事务通过 Bridge 将数据传回来的时候，希望对 Posted 写事务采取刷新操作。但是 Target 在没有接收读事务之前，不会接受这个 Posted 写事务。这样会产生 Deadlock。&lt;/p&gt;
+&lt;p&gt;Bridge 向 Target 发送 Posted 写事务，对这个 PCI 设备而言是作为 Target 接受 Bridge 发过来的数据；Target 向 Memory 发送 Non-Posted 读事务，对于这个 PCI 设备而言是作为 Master 从 Memory（Bridge）读取数据。当 PCI 设备既作为 Target 又作为 Master 相关的事务数据产生依赖时（也就是说这两个 Master 和 Target 状态机不是完全独立的），将会发生死锁。&lt;/p&gt;
+&lt;h3 id=&#34;21-lock-cycle-对其他-transaction-约束&#34;&gt;2.1. Lock cycle 对其他 transaction 约束&lt;/h3&gt;
+&lt;p&gt;PCI 桥可以将 LOCK 总线事务从上游传递到下游，但是不能将 LOCK 总线事务从下游传递到上游。&lt;/p&gt;
+&lt;p&gt;当 PCI 桥从一个 Master 接收到一个 LOCK 总线事务后，将这个总线事务发送到下游总线的目标设备。如果 LOCK 总线事务为 Non-Posted 总线事务，PCI 桥并不能完成这个 LOCK 总线事务，因为 PCI 桥还需要将 Non-Posted 总线请求对应的总线完成信息传递给发起者之后，LOCK 总线事务才更够完成。&lt;/p&gt;
+&lt;p&gt;在 PCI 桥没有将 LOCK 总线事务完成传递给发起者之前的这段时间里，PCI 桥仅接受这个发起者 LOCK 总线事务的主设备的总线请求，而重试其他主设备发出的总线事务。PCI 桥不会使用 Delayed 总线事务接收其他 Non-Poested 总线事务，也不会暂存这些总线事务。&lt;/p&gt;
+&lt;p&gt;LOCK 总线事务从 PCI 桥的上游到达 PCI 桥，在 PCI 桥将这个 LOCK 总线事务传递到下游总线这段时间里，PCI 桥需要：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将所有同方向的 PMW（Posted Memory Write）总线事务刷新到下游总线。&lt;/li&gt;
+&lt;li&gt;对于 Delayed 总线事务，丢弃所有暂存在 PCI 桥中的 Delayed 总线事务，允许 LOCK 总线事务超越任何读写请求。或者完成所有的 Delayed 读写请求，再讲过 LOCK 总线事务发送给下游总线。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 PCI 桥的下游总线接收 LOCK 总线请求之前，PCI 桥仍然可以暂存来自下游总线的数据请求。在下游总线接受 LOCK 总线请求后，并且必须完成发向上游总线的 PWM（Posted Memory Write）, DRC（Delay Read Complete）和 DWC（Delay Write Complete），PCI 桥不能接受任何来自下游总线的数据请求，直到发起 LOCK 总线请求的主设备解锁。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>PCI Configuration</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/</link>
+      <pubDate>Thu, 12 Sep 2019 21:47:15 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/</guid>
+      
+        <description>&lt;h2 id=&#34;1-pci-configuration-过程&#34;&gt;1. PCI Configuration 过程&lt;/h2&gt;
+&lt;p&gt;例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step1:&lt;/strong&gt;  向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示）采用 I/O 写的方式写入 &lt;code&gt;32&#39;b1_0000000_0000_0010_00001_000_000011_00&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190912213318.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果设备直接挂在主桥上，主桥将会产生 Type 0 Configuration Transaction；如果设备没有挂在主桥上，将会产生 Type 1 Configuration Transaction 向下传输，当 Type 1 Configuration Transaction 到达设备所在的 Bridge 时，Type 1 Transaction 在 bridge 中将会转换为 Type 0 Transaction （如图 3-3 所示）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190912213346.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Bridge 的 AD[31:11] 连接 PCI 设备的 IDSEL 位，根据 Device Number 的数据，PCI Bridge 将将某个设备的 IDSEL 置为有效，便于下个 transaction 进行寄存器配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step2:&lt;/strong&gt; 向 CONFIG_DATA (CFCh) 地址采用 I/O 写的方式向 Step1 中所选的 PCI 设备寄存器写入配置内容。&lt;/p&gt;
+&lt;h3 id=&#34;11-example&#34;&gt;1.1. Example&lt;/h3&gt;
+&lt;h4 id=&#34;111-config-bus-1-device-2-function-3-reg-byte-47-data-0xff&#34;&gt;1.1.1. Config bus 1, device 2, function 3, reg byte 47, data 0xff&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;CONFIG_ADDRESS (CF8h) Transaction：
+&lt;ul&gt;
+&lt;li&gt;ADDRESS 周期：ADDRESS 为 &lt;code&gt;32&#39;hCF8&lt;/code&gt;，Command 为 &lt;code&gt;4&#39;b0011&lt;/code&gt;（I/O 写）;&lt;/li&gt;
+&lt;li&gt;DATA 周期：DATA 为 &lt;code&gt;32&#39;b1_0000000_00000001_00010_011_001011_00&lt;/code&gt;；ByteEnable 为 &lt;code&gt;4&#39;b0000&lt;/code&gt;，表明四个 Byte 都有效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;ul&gt;
+&lt;li&gt;CONFIG_DATA (CFCh) Transaction&lt;br&gt;
+由于第 Byte 47 寄存器相对于 Byte 44 寄存器偏移为 3 Byte，所以 CONFIG_DATA 的起始地址为 &lt;code&gt;CFCh + 3h = CFFh&lt;/code&gt;。
+&lt;ul&gt;
+&lt;li&gt;ADDRESS 周期：ADDRESS 为 &lt;code&gt;32&#39;hCFF&lt;/code&gt;，Command 为 &lt;code&gt;4&#39;b0011&lt;/code&gt;（I/O 写）;&lt;/li&gt;
+&lt;li&gt;DATA 周期：ByteEnable 为 &lt;code&gt;4&#39;b0111&lt;/code&gt;，表明只有第四个 Byte 有效。DATA 为 &lt;code&gt;32&#39;hFFxx_xxxx&lt;/code&gt;，x 为 don&amp;rsquo;t care，即向 Byte 44 寄存器  写入&lt;code&gt;FFh&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190912213255.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;112-read-bus-2-device-1-function-4-register-byte-24&#34;&gt;1.1.2. Read bus 2, device 1, function 4, register byte 24.&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;CONFIG_ADDRESS (CF8h) Transaction：
+&lt;ul&gt;
+&lt;li&gt;ADDRESS 周期：ADDRESS 为 &lt;code&gt;32&#39;hCF8&lt;/code&gt;，Command 为 &lt;code&gt;4&#39;b0011&lt;/code&gt;（I/O 写）;&lt;/li&gt;
+&lt;li&gt;DATA 周期：DATA 为 &lt;code&gt;32&#39;b1_0000000_00000010_00001_100_000110_00&lt;/code&gt;；ByteEnable 为 &lt;code&gt;4&#39;b0000&lt;/code&gt;，表明四个 Byte 都有效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190912213806.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CONFIG_DATA (CFCh) Transaction&lt;br&gt;
+由于第 Byte 24 寄存器相对于 Byte 24 寄存器偏移为 0 Byte，所以 CONFIG_DATA 的起始地址为 &lt;code&gt;CFCh + 0h = CFCh&lt;/code&gt;。
+&lt;ul&gt;
+&lt;li&gt;ADDRESS 周期：ADDRESS 为 &lt;code&gt;32&#39;hCFC&lt;/code&gt;，Command 为 &lt;code&gt;4&#39;b0010&lt;/code&gt;（I/O 读）;&lt;/li&gt;
+&lt;li&gt;DATA 周期：ByteEnable 为 &lt;code&gt;4&#39;b1110&lt;/code&gt;，表明只有第一个 Byte 有效。DATA 为 &lt;code&gt;32&#39;hxxxx_xxDD&lt;/code&gt;，x 为 don&amp;rsquo;t care，D 为读出的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190912213419.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-pci-configuration-关于-byteenable-位应该如何&#34;&gt;2. PCI Configuration 关于 ByteEnable 位应该如何？&lt;/h2&gt;
+&lt;p&gt;PCI Configuration 向 CONFIG_ADDRESS (CF8h) 地址分别写入配置设备信息和配置内容，采用 I/O 写的方式。协议要求 I/O 写入的内容必须是 Full DWORD，只有写入的数据是 Full DWORD 配置才能写入到这两个寄存器中，否者该写入将会被视为普通的 I/O transaction。因此，在 CONFIG_ADDRESS 的数据周期，Byte Enable 必须全部有效。如果 Byte Enable 有一个无效，则不能正常的产生 CONFIG_ADDRESS 的 Configuration Transaction。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anytime a host bridge sees a full DWORD I/O write from the host to CONFIG_ADDRESS, the bridge must latch the data into its CONFIG_ADDRESS register. On full DWORD I/O reads to CONFIG_ADDRESS, the bridge must return the data in CONFIG_ADDRESS. Any other types of accesses to this address (non-DWORD) have no effect on CONFIG_ADDRESS and are executed as normal I/O transactions on the PCI bus. Therefore, the only I/O Space consumed by this register is a DWORD at the given address. I/O devices that share the same address but use BYTE or WORD registers are not affected because their transactions will pass through the host bridge unchanged.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而对于 CONFIG_DATA，只要 I/O 地址落在 CFCh~CFFh 中，就可以对寄存器进行配置。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When a host bridge sees an I/O access that falls inside the DWORD beginning at CONFIG_DATA address, it checks the Enable bit and the Bus Number in the CONFIG_ADDRESS register. If the Enable bit is set and the Bus Number matches the bridge&amp;rsquo;s Bus Number or any Bus Number behind the bridge, a configuration cycle translation must be done.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3-software&#34;&gt;3. Software&lt;/h2&gt;
+&lt;p&gt;x86 的 CPU 只有内存和 I/O 两种空间，没有专用的配置空间，PCI 协议规定利用特定的 I/O 空间操作驱动 PCI 桥路转换成配置空间的操作。目前存在两种转换机制，即配置机制 1#和配置机制 2#。配置机制 2#在新的设计中将不再被采用，新的设计应使用配置机制 1#来产生配置空间的物理操作。这种机制使用了两个特定的 32 位 I/O 空间，即 CF8h 和 CFCh。这两个空间对应于 PCI 桥路的两个寄存器，当桥路看到 CPU 在局部总线对这两个 I/O 空间进行双字 操作时，就将该 I/O 操作转变为 PCI 总线的配置操作。寄存器 CF8h 用于产生配置空间的地址（CONFIG-ADDRESS），寄存器 CFCh 用于保存 配置空间的读写数据（CONFIG-DATA）。&lt;/p&gt;
+&lt;p&gt;配置地址端口（CF8H）的格式定义如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;bit31: 使能  决定是否允许访问配置空间：为“1”时表示可以访问；为“0”时表示不可以访问
+bit24~bit30: 保留
+bit16~bit23:PCI 总线号 从系统中的 256 条总线中选择一条，0--255
+bit11~bit15:PCI 设备号 在一条给定的总线上选择 32 个设备中的一个。0--31
+bit8~bit10:PCI 设备功能号 选择多功能设备中的某一个功能，有八种功能，0--7
+bit2~bit7: 寄存器号 选择配置空间中的一个双字（32 位）
+bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间寄存器。
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;访问设备的 pci 空间时，将要访问配置空间寄存器的总线号、设备号、功能号和寄存器号以一个双字的格式写到配置地址端口 (CF8H-CFBH)，接着执行配置数据端口 (CFCH) 的读和写，向配置数据口写数据即向配置空间写数据，从配置数据口读数据即从配置空间读数据。 以下是在 DOS 下使用。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define PCI_ADDRESS_PORT 0x0CF8
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define PCI_DATA_PORT 0x0CFC
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//获取总线号、设备号、功能号和寄存器号组成的地址。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u32&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;GetCf8Value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;pci_dev&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x80000000&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Bus&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Device&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Function&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;PciRead8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;pci_dev&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;u32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GetCf8Value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Stride&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x03&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xFFFFFFFC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//转换成 CF8 配置端口地址格式，最后 2bit 是 0
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;outpd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PCI_ADDRESS_PORT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;D8&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PCI_DATA_PORT&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Stride&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;PciWrite16&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;pci_dev&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u16&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;u32&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GetCf8Value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pdev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Register&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Stride&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x03&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xFFFFFFFC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;outpd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PCI_ADDRESS_PORT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Cf8Val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;outpw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;PCI_DATA_PORT&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Stride&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;从某个端口输入一个字节 (_inp)、一个字 (_inpw) 或一个双字 (_inpd)。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;nt _inp(
+   unsigned short port
+);
+unsigned short _inpw(
+   unsigned short port
+);
+unsigned long _inpd(
+   unsigned short port
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;_outp、_outpw 和 _outpd 功能分别，对指定的输出端口写字节、字和一个双字。&lt;/p&gt;
+&lt;p&gt;在 linux 中读 pci 配置空间读写，可以直接调用内核 api. 等&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;pci_read_config_byte()
+pci_read_config_word()
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。&lt;/p&gt;
+&lt;p&gt;outb() I/O 上写入 8 位数据 ( 1 字节 )；&lt;/p&gt;
+&lt;p&gt;outw() I/O 上写入 16 位数据 ( 2 字节 )；&lt;/p&gt;
+&lt;p&gt;outl () I/O 上写入 32 位数据 ( 4 字节）；&lt;/p&gt;
+&lt;p&gt;inb 从 I/O 端口读取一个字节；&lt;/p&gt;
+&lt;p&gt;inw 从 I/O 端口读取一个字。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>EDA 工具使用笔记</title>
+      <link>https://himingway.github.io/post/eda/</link>
+      <pubDate>Tue, 10 Sep 2019 00:42:49 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/eda/</guid>
+      
+        <description>&lt;h2 id=&#34;1-vcs-与-verdi-联合使用&#34;&gt;1. VCS 与 Verdi 联合使用&lt;/h2&gt;
+&lt;p&gt;在 VCS 编译的时候，要额外加上 &lt;code&gt;-debug_access+all -kdb -lca&lt;/code&gt; 这个三个选项参数，这样就能在 VCS Compile 中看到 simv.daidir/kdb.elab++这个目录，这个目录就是 VCS 为 Verdi 产生的库，其实就是 VCS 帮 Verdi 生成了一个 Verdi 认识的中间文件，可支持单步调试功能。&lt;/p&gt;
+&lt;p&gt;如果有了&lt;code&gt;​simv.daidir/kdb.elab++&lt;/code&gt;库文件， 可以用&lt;code&gt;Verdi -sv +v2k -elab simv.daidir/kdb -ssf xxx.fsdb&lt;/code&gt; 命令打开 Verdi，或者直接&lt;code&gt;Verdi -sv +v2k -ssf xxx.fsdb&lt;/code&gt;，或者增加一个选项，&lt;code&gt;-gui=verdi&lt;/code&gt;，表示使用 verdi 这个工具进行单步调试。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>PCI Note</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-note/</link>
+      <pubDate>Mon, 09 Sep 2019 00:17:28 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-note/</guid>
+      
+        <description>&lt;h2 id=&#34;1-关于-memory-write-and-invalidate&#34;&gt;1. 关于 &lt;code&gt;Memory Write and Invalidate&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;规范中的描述是
+It allows a memory performance optimization by invalidating a &amp;ldquo;dirty&amp;rdquo; line in a write-back cache without requiring the actual write-back cycle thus shortening access time.&lt;/p&gt;
+&lt;p&gt;对一个新手来说理解这句话很难，天书嘛。就像我。其实非常简单，分 3 步慢慢理解。
+PCI 总线地址映射到 cpu 存储地址（内存地址），我们对这片 cpu 存储地址执行读写，等于读写了 PCI 总线地址，等于读写了 PCI 设备。&lt;/p&gt;
+&lt;p&gt;当这片 cpu 存储器地址使用 write back 的 chche 策略时，就会出现有的 cache 跟实际的存储器不一致。cache 里的内容会比存储器里的更新，当然术语习惯称它们为“脏” &amp;ndash; dirty。标记为 dirty 的 cache 会在合适的时机 write back 到存储器&amp;ndash;这里是 PCI 设备。&lt;/p&gt;
+&lt;p&gt;如果对 PCI 设备一次写入一段较大的数据，大于 1 个 cache line，而这个 cache 恰恰又是 dirty 的，那么就可以直接把数据写入存储器，同时把相关 cache line 的 dirty 标记去掉，这个操作就是 Memory Write and Invalidate 事务。 Invalidate 的是 cache line 的 dirty 标记。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>PCI Fundamental and PCI Transaction Ordering (2)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</link>
+      <pubDate>Mon, 09 Sep 2019 00:01:41 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/</guid>
+      
+        <description>&lt;h2 id=&#34;2-pci-protocol&#34;&gt;2. PCI Protocol&lt;/h2&gt;
+&lt;h3 id=&#34;21-bus-command&#34;&gt;2.1. Bus Command&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190909234959.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;C/BE[3:0]#&lt;/th&gt;
+&lt;th&gt;命令类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0000&lt;/td&gt;
+&lt;td&gt;Interrupt Acknowledge&lt;/td&gt;
+&lt;td&gt;中断响应总线事务读取当前挂接在 PCI 总线上的中断控制器的中断向量号。目前大多数处理器系统的中断控制器都不挂接在 PCI 总线上，因此这种总线事务很少使用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0001&lt;/td&gt;
+&lt;td&gt;Special Cycle&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用 Special Cycle 事务在 PCI 总线上进行信息广播&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0010&lt;/td&gt;
+&lt;td&gt;I/O Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的 LO 地址空间进行读操作。目前多数 PCI 设备都不支持 O 地址空间，而仅支持存储器地址空间，但是仍有部分 PCI 设备同时包含 LO 地址空间和存储器地址空间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0011&lt;/td&gt;
+&lt;td&gt;I/O Write&lt;/td&gt;
+&lt;td&gt;对 PCⅠ总线的 LO 地址空间进行写操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0100&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0101&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0110&lt;/td&gt;
+&lt;td&gt;Memory Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行读操作。PCI 设备也可以使用该总线事务读取处理器的存储器空间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0111&lt;/td&gt;
+&lt;td&gt;Memory Write&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行写操作。PCI 设备也可以使用该总线事务向处理器的存储器空间进行写操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;td&gt;Reserved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1010&lt;/td&gt;
+&lt;td&gt;Configuration Read&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以对 PCl 设备的配置空间进行读操作。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Configuration Write&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以对 PCl 设备的配置空间进行写操作。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1100&lt;/td&gt;
+&lt;td&gt;Memory Read Multiple&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行多行读操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Dual Address Cycle&lt;/td&gt;
+&lt;td&gt;PCI 总线支持 64 位地址，处理器或者其他 PCI 设备访问 64 位 PCI 总线地址时，必须使用双地址周期产生 64 位的 PCI 总线地址。PCI 设备使用 DMA 读写方式访问 64 位的存储器地址时，也可以使用该总线事务&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1000&lt;/td&gt;
+&lt;td&gt;Memory Read Line&lt;/td&gt;
+&lt;td&gt;HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行单行读操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1001&lt;/td&gt;
+&lt;td&gt;Memory Write and Invalidate&lt;/td&gt;
+&lt;td&gt;存储器写并无效操作，与存储器写不同，PCI 设备可以使用该总线事务对主存储器空间进行写操作。该总线事务将数据写人主存储器的同时，将对应 Cache 行中的数据“使无效”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;22-basic-transfer-control&#34;&gt;2.2. Basic Transfer Control&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190910001455.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下面介绍 PCI 基本的传输协议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 FRAME# 和 IRDY# 同时无效的时候，PCI BUS 处于闲置（IDLE）状态。&lt;/li&gt;
+&lt;li&gt;FRANE#有效，表明数据开始传输：
+&lt;ul&gt;
+&lt;li&gt;当 FRAME# 信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。&lt;/li&gt;
+&lt;li&gt;当 IRDY# 和 TRDY# 同时有效的时候，PCI BUS 为数据周期（Data Phase）。&lt;/li&gt;
+&lt;li&gt;当 IRDY# 或 TRDY# 的时候，PCI BUS 为等待周期（Wait Cycle）。&lt;/li&gt;
+&lt;li&gt;当所需要的数据准备好的时候，xRDY# 必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY# 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY# 有效）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;当 FRAME# 无效，IRDY# 有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY# 和 TRDY# 必须是有效的，若 TRDY# 无效，则等待 TRDY# 有效）。&lt;/li&gt;
+&lt;li&gt;当最后一笔传输完成后，FRAME# 和 IRDY# 同时无效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>PCI Fundamental and PCI Transaction Ordering (1)</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</link>
+      <pubDate>Sun, 08 Sep 2019 17:41:25 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/</guid>
+      
+        <description>&lt;h2 id=&#34;1-pci-pin-list&#34;&gt;1. PCI Pin List&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190908182945.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 PICI 设备中，对于 target 设备，它的 PIN 最小的数目为 47 个；对于 Master 设备，它的 PIN 最小的数目为 49 个。除了这些基本的 PIN，PCI 设备还有一些扩展的 PIN，比如 64 位扩展 PIN：AD[63:32]，等。对于基本的 PIN，它的名称和功能如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AD[31:0]: 复用的地址和数据总线&lt;/li&gt;
+&lt;li&gt;C/BE[3::0]: 总线命令（Bus Command）和 Byte 使能信号（Byte Enable），这也是一个复用的总线。当总线在地址周期时，它的功能为总线命令；当总线在数据周期时候，它的功能为 Byte 使能。&lt;/li&gt;
+&lt;li&gt;PAR: Parity，奇偶校验位&lt;/li&gt;
+&lt;li&gt;FRAME#: 周期帧（Cycle Frame）, 当 FRAME# 有效时，意味着总线传输开始；当 FRAME# 无效时，意味着该时钟的传输为最后一个数据传输，或者数据传输已经完成。&lt;/li&gt;
+&lt;li&gt;IRDY#: 标志 Initiator 的数据准备完成 Ready&lt;/li&gt;
+&lt;li&gt;TRDY#: 标志 Target 的数据准备完成 Ready&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://himingway.github.io/assets/20190908184159.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;STOP#: 当该信号有效时候，Target 设备向 Master 设备发送停止信号。&lt;/li&gt;
+&lt;li&gt;LOCK#: PCI 主设备可以使用该信号，原子操作将目标设备的某个存储器或者 I/O 资源锁定，以禁止其他 PCI 主设备访问此资源，直到锁定这个资源的主设备将其释放。PCI 总线使用 LOCK# 信号实现 LOCK 总线事务，只有 HOST 主桥、PCI 桥或者其他桥片可以使用 LOCK#信号。&lt;/li&gt;
+&lt;li&gt;IDSEL: 在 PCI 总线配置读写总线事务中，该信号用于选择 PCI 目标设备。&lt;/li&gt;
+&lt;li&gt;DEVSEL#: 该信号有效时，表示 PCI 总线的目标设备已经准备好，该信号有效表示目标设备已经完成了地址译码，也就是说，这个信号已经被选择。&lt;/li&gt;
+&lt;li&gt;REQ#: Master 的 Request 仲裁信号。&lt;/li&gt;
+&lt;li&gt;GNT#: Master 的 Grant 仲裁信号。&lt;/li&gt;
+&lt;li&gt;INTx#: 请求中断信号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/&#34;&gt;本系列文章目录&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Table of Content for PCI Fundamental and PCI Transaction Ordering</title>
+      <link>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</link>
+      <pubDate>Sun, 08 Sep 2019 00:02:12 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/</guid>
+      
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-1/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (1)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (2)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/&#34;&gt;PCI Fundamental and PCI Transaction Ordering (3)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;其它：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-note/&#34;&gt;PCI笔记&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/&#34;&gt;PCI Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-ordering/&#34;&gt;PCI Ordering&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       
     </item>
     

@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-configuration/" />
+
+
 
 
 
@@ -51,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.beeee9263145d19f5cdcf49ac6db6043d65e81a3baca2d98bf7dc637c4875a84.css" integrity="sha256-vu7pJjFF0Z9c3PSaxttgQ9ZegaO6yi2Yv33GN8SHWoQ=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,16 +69,13 @@
 <meta property="article:modified_time" content="2019-09-13T01:19:08+08:00" />
 <meta itemprop="name" content="PCI Configuration">
 <meta itemprop="description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示">
-
-
 <meta itemprop="datePublished" content="2019-09-12T21:47:15&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-13T01:19:08&#43;08:00" />
-<meta itemprop="wordCount" content="2256">
+<meta itemprop="wordCount" content="2244">
 
 
 
-<meta itemprop="keywords" content="PCI,Chipset," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="PCI,Chipset," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PCI Configuration"/>
 <meta name="twitter:description" content="1. PCI Configuration 过程 例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下： Step1: 向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示"/>
 
@@ -92,10 +91,6 @@
 
 
 
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -328,168 +323,107 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-pci-configuration-过程">1. PCI Configuration 过程</a>
-<ul>
-<li><a href="#1-1-example">1.1. Example</a>
-<ul>
-<li><a href="#1-1-1-config-bus-1-device-2-function-3-reg-byte-47-data-0xff">1.1.1. Config bus 1, device 2, function 3, reg byte 47, data 0xff</a></li>
-<li><a href="#1-1-2-read-bus-2-device-1-function-4-register-byte-24">1.1.2. Read bus 2, device 1, function 4, register byte 24.</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#2-pci-configuration-关于-byteenable-位应该如何">2. PCI Configuration 关于 ByteEnable 位应该如何？</a></li>
-<li><a href="#3-software">3. Software</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1-pci-configuration-过程">1. PCI Configuration 过程</a>
+      <ul>
+        <li><a href="#11-example">1.1. Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-pci-configuration-关于-byteenable-位应该如何">2. PCI Configuration 关于 ByteEnable 位应该如何？</a></li>
+    <li><a href="#3-software">3. Software</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="1-pci-configuration-过程">1. PCI Configuration 过程</h2>
-
+      <h2 id="1-pci-configuration-过程">1. PCI Configuration 过程</h2>
 <p>例如，对 Bus Number 为 2，Device Number 为 1，Function Number 为 0 的 PCI 设备的第 3 个寄存器进行配置，具体步骤如下：</p>
-
 <p><strong>Step1:</strong>  向 CONFIG_ADDRESS (CF8h) 地址（如图 3-2 所示）采用 I/O 写的方式写入 <code>32'b1_0000000_0000_0010_00001_000_000011_00</code></p>
-
-<p><img src="/assets/20190912213318.png" alt="" /></p>
-
+<p><img src="/assets/20190912213318.png" alt=""></p>
 <p>如果设备直接挂在主桥上，主桥将会产生 Type 0 Configuration Transaction；如果设备没有挂在主桥上，将会产生 Type 1 Configuration Transaction 向下传输，当 Type 1 Configuration Transaction 到达设备所在的 Bridge 时，Type 1 Transaction 在 bridge 中将会转换为 Type 0 Transaction （如图 3-3 所示）。</p>
-
-<p><img src="/assets/20190912213346.png" alt="" /></p>
-
+<p><img src="/assets/20190912213346.png" alt=""></p>
 <p>Bridge 的 AD[31:11] 连接 PCI 设备的 IDSEL 位，根据 Device Number 的数据，PCI Bridge 将将某个设备的 IDSEL 置为有效，便于下个 transaction 进行寄存器配置。</p>
-
 <p><strong>Step2:</strong> 向 CONFIG_DATA (CFCh) 地址采用 I/O 写的方式向 Step1 中所选的 PCI 设备寄存器写入配置内容。</p>
-
-<h3 id="1-1-example">1.1. Example</h3>
-
-<h4 id="1-1-1-config-bus-1-device-2-function-3-reg-byte-47-data-0xff">1.1.1. Config bus 1, device 2, function 3, reg byte 47, data 0xff</h4>
-
+<h3 id="11-example">1.1. Example</h3>
+<h4 id="111-config-bus-1-device-2-function-3-reg-byte-47-data-0xff">1.1.1. Config bus 1, device 2, function 3, reg byte 47, data 0xff</h4>
 <ul>
 <li>CONFIG_ADDRESS (CF8h) Transaction：
-
 <ul>
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCF8</code>，Command 为 <code>4'b0011</code>（I/O 写）;</li>
 <li>DATA 周期：DATA 为 <code>32'b1_0000000_00000001_00010_011_001011_00</code>；ByteEnable 为 <code>4'b0000</code>，表明四个 Byte 都有效。</li>
-</ul></li>
 </ul>
-
-<p><aa></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">   En_..Resv._..Bus..._.Dev._Fun_.Reg.._00
-32&#39;b1_0000000_00000001_00010_011_001011_00
-    1_...0..._...1...._..2.._.3._..11.._00</pre></td></tr></table>
-</div>
-</div>
-<p></aa></p>
-
+</li>
+</ul>
+<!-- raw HTML omitted -->
 <ul>
-<li>CONFIG_DATA (CFCh) Transaction<br />
+<li>CONFIG_DATA (CFCh) Transaction<br>
 由于第 Byte 47 寄存器相对于 Byte 44 寄存器偏移为 3 Byte，所以 CONFIG_DATA 的起始地址为 <code>CFCh + 3h = CFFh</code>。
-
 <ul>
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCFF</code>，Command 为 <code>4'b0011</code>（I/O 写）;</li>
 <li>DATA 周期：ByteEnable 为 <code>4'b0111</code>，表明只有第四个 Byte 有效。DATA 为 <code>32'hFFxx_xxxx</code>，x 为 don&rsquo;t care，即向 Byte 44 寄存器  写入<code>FFh</code>。</li>
-</ul></li>
 </ul>
-
-<p><img src="/assets/20190912213255.png" alt="" /></p>
-
-<h4 id="1-1-2-read-bus-2-device-1-function-4-register-byte-24">1.1.2. Read bus 2, device 1, function 4, register byte 24.</h4>
-
+</li>
+</ul>
+<p><img src="/assets/20190912213255.png" alt=""></p>
+<h4 id="112-read-bus-2-device-1-function-4-register-byte-24">1.1.2. Read bus 2, device 1, function 4, register byte 24.</h4>
 <ul>
 <li>CONFIG_ADDRESS (CF8h) Transaction：
-
 <ul>
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCF8</code>，Command 为 <code>4'b0011</code>（I/O 写）;</li>
 <li>DATA 周期：DATA 为 <code>32'b1_0000000_00000010_00001_100_000110_00</code>；ByteEnable 为 <code>4'b0000</code>，表明四个 Byte 都有效。</li>
-</ul></li>
 </ul>
-
-<p><aa></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">   En_..Resv._..Bus..._.Dev._Fun_.Reg.._00
-32&#39;b1_0000000_00000010_00001_100_000110_00
-    1_...0..._...2...._..1.._.4._..6..._00</pre></td></tr></table>
-</div>
-</div>
-<p></aa></p>
-
-<p><img src="/assets/20190912213806.png" alt="" /></p>
-
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><img src="/assets/20190912213806.png" alt=""></p>
 <ul>
-<li>CONFIG_DATA (CFCh) Transaction<br />
+<li>CONFIG_DATA (CFCh) Transaction<br>
 由于第 Byte 24 寄存器相对于 Byte 24 寄存器偏移为 0 Byte，所以 CONFIG_DATA 的起始地址为 <code>CFCh + 0h = CFCh</code>。
-
 <ul>
 <li>ADDRESS 周期：ADDRESS 为 <code>32'hCFC</code>，Command 为 <code>4'b0010</code>（I/O 读）;</li>
 <li>DATA 周期：ByteEnable 为 <code>4'b1110</code>，表明只有第一个 Byte 有效。DATA 为 <code>32'hxxxx_xxDD</code>，x 为 don&rsquo;t care，D 为读出的数据。</li>
-</ul></li>
 </ul>
-
-<p><img src="/assets/20190912213419.png" alt="" /></p>
-
+</li>
+</ul>
+<p><img src="/assets/20190912213419.png" alt=""></p>
 <h2 id="2-pci-configuration-关于-byteenable-位应该如何">2. PCI Configuration 关于 ByteEnable 位应该如何？</h2>
-
 <p>PCI Configuration 向 CONFIG_ADDRESS (CF8h) 地址分别写入配置设备信息和配置内容，采用 I/O 写的方式。协议要求 I/O 写入的内容必须是 Full DWORD，只有写入的数据是 Full DWORD 配置才能写入到这两个寄存器中，否者该写入将会被视为普通的 I/O transaction。因此，在 CONFIG_ADDRESS 的数据周期，Byte Enable 必须全部有效。如果 Byte Enable 有一个无效，则不能正常的产生 CONFIG_ADDRESS 的 Configuration Transaction。</p>
-
 <blockquote>
 <p>Anytime a host bridge sees a full DWORD I/O write from the host to CONFIG_ADDRESS, the bridge must latch the data into its CONFIG_ADDRESS register. On full DWORD I/O reads to CONFIG_ADDRESS, the bridge must return the data in CONFIG_ADDRESS. Any other types of accesses to this address (non-DWORD) have no effect on CONFIG_ADDRESS and are executed as normal I/O transactions on the PCI bus. Therefore, the only I/O Space consumed by this register is a DWORD at the given address. I/O devices that share the same address but use BYTE or WORD registers are not affected because their transactions will pass through the host bridge unchanged.</p>
 </blockquote>
-
 <p>而对于 CONFIG_DATA，只要 I/O 地址落在 CFCh~CFFh 中，就可以对寄存器进行配置。</p>
-
 <blockquote>
 <p>When a host bridge sees an I/O access that falls inside the DWORD beginning at CONFIG_DATA address, it checks the Enable bit and the Bus Number in the CONFIG_ADDRESS register. If the Enable bit is set and the Bus Number matches the bridge&rsquo;s Bus Number or any Bus Number behind the bridge, a configuration cycle translation must be done.</p>
 </blockquote>
-
 <h2 id="3-software">3. Software</h2>
-
 <p>x86 的 CPU 只有内存和 I/O 两种空间，没有专用的配置空间，PCI 协议规定利用特定的 I/O 空间操作驱动 PCI 桥路转换成配置空间的操作。目前存在两种转换机制，即配置机制 1#和配置机制 2#。配置机制 2#在新的设计中将不再被采用，新的设计应使用配置机制 1#来产生配置空间的物理操作。这种机制使用了两个特定的 32 位 I/O 空间，即 CF8h 和 CFCh。这两个空间对应于 PCI 桥路的两个寄存器，当桥路看到 CPU 在局部总线对这两个 I/O 空间进行双字 操作时，就将该 I/O 操作转变为 PCI 总线的配置操作。寄存器 CF8h 用于产生配置空间的地址（CONFIG-ADDRESS），寄存器 CFCh 用于保存 配置空间的读写数据（CONFIG-DATA）。</p>
-
 <p>配置地址端口（CF8H）的格式定义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">bit31: 使能  决定是否允许访问配置空间：为“1”时表示可以访问；为“0”时表示不可以访问
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">bit31: 使能  决定是否允许访问配置空间：为“1”时表示可以访问；为“0”时表示不可以访问
 bit24~bit30: 保留
 bit16~bit23:PCI 总线号 从系统中的 256 条总线中选择一条，0--255
 bit11~bit15:PCI 设备号 在一条给定的总线上选择 32 个设备中的一个。0--31
 bit8~bit10:PCI 设备功能号 选择多功能设备中的某一个功能，有八种功能，0--7
 bit2~bit7: 寄存器号 选择配置空间中的一个双字（32 位）
-bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间寄存器。</pre></td></tr></table>
+bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间寄存器。
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>访问设备的 pci 空间时，将要访问配置空间寄存器的总线号、设备号、功能号和寄存器号以一个双字的格式写到配置地址端口 (CF8H-CFBH)，接着执行配置数据端口 (CFCH) 的读和写，向配置数据口写数据即向配置空间写数据，从配置数据口读数据即从配置空间读数据。 以下是在 DOS 下使用。</p>
+</div><p>访问设备的 pci 空间时，将要访问配置空间寄存器的总线号、设备号、功能号和寄存器号以一个双字的格式写到配置地址端口 (CF8H-CFBH)，接着执行配置数据端口 (CFCH) 的读和写，向配置数据口写数据即向配置空间写数据，从配置数据口读数据即从配置空间读数据。 以下是在 DOS 下使用。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -519,11 +453,11 @@ bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间�
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define PCI_ADDRESS_PORT 0x0CF8
 </span><span class="cp">#define PCI_DATA_PORT 0x0CFC
 </span><span class="cp"></span><span class="c1">//获取总线号、设备号、功能号和寄存器号组成的地址。
-</span><span class="c1"></span><span class="n">u32</span> <span class="nf">GetCf8Value</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
+</span><span class="c1"></span><span class="n">u32</span> <span class="nf">GetCf8Value</span><span class="p">(</span><span class="k">struct</span> <span class="nc">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="mh">0x80000000</span><span class="o">|</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Bus</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Device</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">pdev</span><span class="o">-&gt;</span><span class="n">Function</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">Register</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n">u8</span> <span class="nf">PciRead8</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
+<span class="n">u8</span> <span class="nf">PciRead8</span><span class="p">(</span><span class="k">struct</span> <span class="nc">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">u32</span> <span class="n">Cf8Val</span> <span class="o">=</span> <span class="n">GetCf8Value</span><span class="p">(</span><span class="n">pdev</span><span class="p">,</span><span class="n">Register</span><span class="p">);</span>
     <span class="n">u8</span> <span class="n">Stride</span> <span class="o">=</span> <span class="p">(</span><span class="n">u8</span><span class="p">)(</span><span class="n">Cf8Val</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">);</span>
@@ -533,7 +467,7 @@ bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间�
     <span class="n">D8</span> <span class="o">=</span> <span class="n">inp</span><span class="p">(</span><span class="n">PCI_DATA_PORT</span> <span class="o">+</span> <span class="n">Stride</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">D8</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="kt">void</span> <span class="nf">PciWrite16</span><span class="p">(</span><span class="k">struct</span> <span class="n">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">,</span> <span class="n">u16</span> <span class="n">Data</span><span class="p">)</span>
+<span class="kt">void</span> <span class="nf">PciWrite16</span><span class="p">(</span><span class="k">struct</span> <span class="nc">pci_dev</span> <span class="o">*</span><span class="n">pdev</span><span class="p">,</span><span class="n">u8</span> <span class="n">Register</span><span class="p">,</span> <span class="n">u16</span> <span class="n">Data</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">u32</span> <span class="n">Cf8Val</span> <span class="o">=</span> <span class="n">GetCf8Value</span><span class="p">(</span><span class="n">pdev</span><span class="p">,</span><span class="n">Register</span><span class="p">);</span>
     <span class="n">u8</span> <span class="n">Stride</span> <span class="o">=</span> <span class="p">(</span><span class="n">u8</span><span class="p">)(</span><span class="n">Cf8Val</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">);</span>
@@ -543,11 +477,10 @@ bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间�
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>从某个端口输入一个字节 (_inp)、一个字 (_inpw) 或一个双字 (_inpd)。</p>
+</div><p>从某个端口输入一个字节 (_inp)、一个字 (_inpw) 或一个双字 (_inpd)。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -556,9 +489,9 @@ bit0~bit1:00  用来要求你只能按双字（4 字节）来读写配置空间�
 </span><span class="lnt">7
 </span><span class="lnt">8
 </span><span class="lnt">9
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">nt _inp(
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nt _inp(
    unsigned short port
 );
 unsigned short _inpw(
@@ -566,36 +499,28 @@ unsigned short _inpw(
 );
 unsigned long _inpd(
    unsigned short port
-);</pre></td></tr></table>
+);
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>_outp、_outpw 和 _outpd 功能分别，对指定的输出端口写字节、字和一个双字。</p>
-
+</div><p>_outp、_outpw 和 _outpd 功能分别，对指定的输出端口写字节、字和一个双字。</p>
 <p>在 linux 中读 pci 配置空间读写，可以直接调用内核 api. 等</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">pci_read_config_byte()
-pci_read_config_word()</pre></td></tr></table>
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pci_read_config_byte()
+pci_read_config_word()
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。</p>
-
+</div><p>另外，在区别 I/O 空间和内存空间的进程的 I/O 空间写入数据。</p>
 <p>outb() I/O 上写入 8 位数据 ( 1 字节 )；</p>
-
 <p>outw() I/O 上写入 16 位数据 ( 2 字节 )；</p>
-
 <p>outl () I/O 上写入 32 位数据 ( 4 字节）；</p>
-
 <p>inb 从 I/O 端口读取一个字节；</p>
-
 <p>inw 从 I/O 端口读取一个字。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li><a href="/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/">本系列文章目录</a></li>
 </ul>
@@ -771,7 +696,9 @@ pci_read_config_word()</pre></td></tr></table>
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">

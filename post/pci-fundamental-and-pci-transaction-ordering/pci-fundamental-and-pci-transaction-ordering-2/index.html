@@ -32,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.65.3" />
 
 
 <link rel="canonical" href="https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-2/" />
+
+
 
 
 
@@ -51,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.beeee9263145d19f5cdcf49ac6db6043d65e81a3baca2d98bf7dc637c4875a84.css" integrity="sha256-vu7pJjFF0Z9c3PSaxttgQ9ZegaO6yi2Yv33GN8SHWoQ=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,16 +69,13 @@
 <meta property="article:modified_time" content="2019-09-13T01:19:08+08:00" />
 <meta itemprop="name" content="PCI Fundamental and PCI Transaction Ordering (2)">
 <meta itemprop="description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令">
-
-
 <meta itemprop="datePublished" content="2019-09-09T00:01:41&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-13T01:19:08&#43;08:00" />
 <meta itemprop="wordCount" content="1048">
 
 
 
-<meta itemprop="keywords" content="PCI,Chipset," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="PCI,Chipset," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PCI Fundamental and PCI Transaction Ordering (2)"/>
 <meta name="twitter:description" content="2. PCI Protocol 2.1. Bus Command PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。 C/BE[3:0]# 命令"/>
 
@@ -92,10 +91,6 @@
 
 
 
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
@@ -328,32 +323,24 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#2-pci-protocol">2. PCI Protocol</a>
-<ul>
-<li><a href="#2-1-bus-command">2.1. Bus Command</a></li>
-<li><a href="#2-2-basic-transfer-control">2.2. Basic Transfer Control</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#2-pci-protocol">2. PCI Protocol</a>
+      <ul>
+        <li><a href="#21-bus-command">2.1. Bus Command</a></li>
+        <li><a href="#22-basic-transfer-control">2.2. Basic Transfer Control</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="2-pci-protocol">2. PCI Protocol</h2>
-
-<h3 id="2-1-bus-command">2.1. Bus Command</h3>
-
-<p><img src="/assets/20190909234959.png" alt="" /></p>
-
+      <h2 id="2-pci-protocol">2. PCI Protocol</h2>
+<h3 id="21-bus-command">2.1. Bus Command</h3>
+<p><img src="/assets/20190909234959.png" alt=""></p>
 <p>PCI 的 C/BE#信号复用命令与字节选通引脚。在地址周期的时候，C/BE[3:0]#信号表示 PCI 总线的命令；这些命令如下表所示。</p>
-
 <table>
 <thead>
 <tr>
@@ -362,98 +349,82 @@
 <th>说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0000</td>
 <td>Interrupt Acknowledge</td>
 <td>中断响应总线事务读取当前挂接在 PCI 总线上的中断控制器的中断向量号。目前大多数处理器系统的中断控制器都不挂接在 PCI 总线上，因此这种总线事务很少使用</td>
 </tr>
-
 <tr>
 <td>0001</td>
 <td>Special Cycle</td>
 <td>HOST 主桥可以使用 Special Cycle 事务在 PCI 总线上进行信息广播</td>
 </tr>
-
 <tr>
 <td>0010</td>
 <td>I/O Read</td>
 <td>HOST 主桥可以使用该总线事务对 PCI 设备的 LO 地址空间进行读操作。目前多数 PCI 设备都不支持 O 地址空间，而仅支持存储器地址空间，但是仍有部分 PCI 设备同时包含 LO 地址空间和存储器地址空间</td>
 </tr>
-
 <tr>
 <td>0011</td>
 <td>I/O Write</td>
 <td>对 PCⅠ总线的 LO 地址空间进行写操作</td>
 </tr>
-
 <tr>
 <td>0100</td>
 <td>Reserved</td>
 <td>Reserved</td>
 </tr>
-
 <tr>
 <td>0101</td>
 <td>Reserved</td>
 <td>Reserved</td>
 </tr>
-
 <tr>
 <td>0110</td>
 <td>Memory Read</td>
 <td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行读操作。PCI 设备也可以使用该总线事务读取处理器的存储器空间</td>
 </tr>
-
 <tr>
 <td>0111</td>
 <td>Memory Write</td>
 <td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行写操作。PCI 设备也可以使用该总线事务向处理器的存储器空间进行写操作</td>
 </tr>
-
 <tr>
 <td>1000</td>
 <td>Reserved</td>
 <td>Reserved</td>
 </tr>
-
 <tr>
 <td>1001</td>
 <td>Reserved</td>
 <td>Reserved</td>
 </tr>
-
 <tr>
 <td>1010</td>
 <td>Configuration Read</td>
 <td>HOST 主桥可以对 PCl 设备的配置空间进行读操作。</td>
 </tr>
-
 <tr>
 <td>1001</td>
 <td>Configuration Write</td>
 <td>HOST 主桥可以对 PCl 设备的配置空间进行写操作。</td>
 </tr>
-
 <tr>
 <td>1100</td>
 <td>Memory Read Multiple</td>
 <td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行多行读操作</td>
 </tr>
-
 <tr>
 <td>1001</td>
 <td>Dual Address Cycle</td>
 <td>PCI 总线支持 64 位地址，处理器或者其他 PCI 设备访问 64 位 PCI 总线地址时，必须使用双地址周期产生 64 位的 PCI 总线地址。PCI 设备使用 DMA 读写方式访问 64 位的存储器地址时，也可以使用该总线事务</td>
 </tr>
-
 <tr>
 <td>1000</td>
 <td>Memory Read Line</td>
 <td>HOST 主桥可以使用该总线事务对 PCI 设备的存储器空间进行单行读操作</td>
 </tr>
-
 <tr>
 <td>1001</td>
 <td>Memory Write and Invalidate</td>
@@ -461,29 +432,23 @@
 </tr>
 </tbody>
 </table>
-
-<h3 id="2-2-basic-transfer-control">2.2. Basic Transfer Control</h3>
-
-<p><img src="/assets/20190910001455.png" alt="" /></p>
-
+<h3 id="22-basic-transfer-control">2.2. Basic Transfer Control</h3>
+<p><img src="/assets/20190910001455.png" alt=""></p>
 <p>下面介绍 PCI 基本的传输协议：</p>
-
 <ul>
 <li>当 FRAME# 和 IRDY# 同时无效的时候，PCI BUS 处于闲置（IDLE）状态。</li>
 <li>FRANE#有效，表明数据开始传输：
-
 <ul>
 <li>当 FRAME# 信号有效的第一个时钟周期，PCI BUS 为地址周期（Address Phase）。</li>
 <li>当 IRDY# 和 TRDY# 同时有效的时候，PCI BUS 为数据周期（Data Phase）。</li>
 <li>当 IRDY# 或 TRDY# 的时候，PCI BUS 为等待周期（Wait Cycle）。</li>
 <li>当所需要的数据准备好的时候，xRDY# 必须是有效的（对于写操作，当 Master 的数据准备好的时候，IRDY# 有效；对于读操作，当 Target 的数据准备好哒时候，TRDY# 有效）。</li>
-</ul></li>
+</ul>
+</li>
 <li>当 FRAME# 无效，IRDY# 有效的时候，标志着最后一笔传输，这笔传输必须被传输完成（也就是说，发生最后一笔传输的时候，IRDY# 和 TRDY# 必须是有效的，若 TRDY# 无效，则等待 TRDY# 有效）。</li>
 <li>当最后一笔传输完成后，FRAME# 和 IRDY# 同时无效。</li>
 </ul>
-
-<hr />
-
+<hr>
 <ul>
 <li><a href="/post/pci-fundamental-and-pci-transaction-ordering/table-of-content/">本系列文章目录</a></li>
 </ul>
@@ -659,7 +624,9 @@
 
   <span class="copyright-year">
     &copy;
-    2019
+    
+      2019 -
+    2020
     <span class="heart">
       
       <i class="iconfont">

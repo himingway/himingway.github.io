@@ -6,7 +6,7 @@
     <description>Recent content on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Dec 2020 19:16:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 22:36:14 +0800</lastBuildDate>
     
         <atom:link href="https://himingway.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -60,6 +60,24 @@
 &lt;ul&gt;
 &lt;li&gt;若要转载，请留言说明，并在文末注明出处；&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>On Chip Netword</title>
+      <link>https://himingway.github.io/post/on-chip-netword/</link>
+      <pubDate>Sun, 06 Dec 2020 22:36:14 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/on-chip-netword/</guid>
+      
+        <description>&lt;h1 id=&#34;on-chip-network-片上网络&#34;&gt;On-Chip Network 片上网络&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_1.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_2.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_3.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_4.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_5.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/image/NOC_Chapter1_6.PNG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>

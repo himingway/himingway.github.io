@@ -6,13 +6,22 @@
     <description>Recent content in Tags on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Dec 2020 19:16:14 +0800</lastBuildDate><atom:link href="https://himingway.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Dec 2020 22:36:14 +0800</lastBuildDate><atom:link href="https://himingway.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Computer Architecture</title>
       <link>https://himingway.github.io/tags/computer-architecture/</link>
-      <pubDate>Sun, 06 Dec 2020 19:16:14 +0800</pubDate>
+      <pubDate>Sun, 06 Dec 2020 22:36:14 +0800</pubDate>
       
       <guid>https://himingway.github.io/tags/computer-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On-Chip Network</title>
+      <link>https://himingway.github.io/tags/on-chip-network/</link>
+      <pubDate>Sun, 06 Dec 2020 22:36:14 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/tags/on-chip-network/</guid>
       <description></description>
     </item>
     

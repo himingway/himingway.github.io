@@ -6,7 +6,7 @@
     <description>Recent content on ICNote - A Site for Sharing Notes about IC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Oct 2019 23:42:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 19:16:14 +0800</lastBuildDate>
     
         <atom:link href="https://himingway.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -59,6 +59,75 @@
 &lt;h3 id=&#34;对使用者的建议如下&#34;&gt;对使用者的建议如下：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;若要转载，请留言说明，并在文末注明出处；&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Synthesis Lectures on Computer Architecture</title>
+      <link>https://himingway.github.io/post/synthesis-lectures-on-computer-architecture/</link>
+      <pubDate>Sun, 06 Dec 2020 19:16:14 +0800</pubDate>
+      
+      <guid>https://himingway.github.io/post/synthesis-lectures-on-computer-architecture/</guid>
+      
+        <description>&lt;h2 id=&#34;book-list&#34;&gt;Book List:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;​AI for Computer Architecture: Principles, Practice, and Prospects&lt;/li&gt;
+&lt;li&gt;Deep Learning Systems: Algorithms, Compilers, and Processors for Large-Scale Production&lt;/li&gt;
+&lt;li&gt;Parallel Processing, 1980 to 2020&lt;/li&gt;
+&lt;li&gt;Data Orchestration in Deep Learning Accelerators&lt;/li&gt;
+&lt;li&gt;Efficient Processing of Deep Neural Networks&lt;/li&gt;
+&lt;li&gt;Quantum Computer Systems: Research for Noisy Intermediate-Scale Quantum Computers&lt;/li&gt;
+&lt;li&gt;A Primer on Memory Consistency and Cache Coherence, Second Edition&lt;/li&gt;
+&lt;li&gt;Innovations in the Memory System&lt;/li&gt;
+&lt;li&gt;Cache Replacement Policies&lt;/li&gt;
+&lt;li&gt;The Datacenter as a Computer: Designing Warehouse-Scale Machines, Third Edition&lt;/li&gt;
+&lt;li&gt;Principles of Secure Processor Architecture Design&lt;/li&gt;
+&lt;li&gt;General-Purpose Graphics Processor Architectures&lt;/li&gt;
+&lt;li&gt;Compiling Algorithms for Heterogeneous Systems&lt;/li&gt;
+&lt;li&gt;Architectural and Operating System Support for Virtual Memory&lt;/li&gt;
+&lt;li&gt;Deep Learning for Computer Architects&lt;/li&gt;
+&lt;li&gt;On-Chip Networks, Second Edition&lt;/li&gt;
+&lt;li&gt;Space-Time Computing with Temporal Neural Networks&lt;/li&gt;
+&lt;li&gt;Hardware and Software Support for Virtualization&lt;/li&gt;
+&lt;li&gt;Datacenter Design and Management: A Computer Architect&amp;rsquo;s Perspective&lt;/li&gt;
+&lt;li&gt;A Primer on Compression in the Memory Hierarchy&lt;/li&gt;
+&lt;li&gt;Research Infrastructures for Hardware Accelerators&lt;/li&gt;
+&lt;li&gt;Analyzing Analytics&lt;/li&gt;
+&lt;li&gt;Customizable Computing&lt;/li&gt;
+&lt;li&gt;Die-stacking Architecture&lt;/li&gt;
+&lt;li&gt;Single-Instruction Multiple-Data Execution&lt;/li&gt;
+&lt;li&gt;Power-Efficient Computer Architectures: Recent Advances&lt;/li&gt;
+&lt;li&gt;FPGA-Accelerated Simulation of Computer Systems&lt;/li&gt;
+&lt;li&gt;A Primer on Hardware Prefetching&lt;/li&gt;
+&lt;li&gt;On-Chip Photonic Interconnects: A Computer Architect&amp;rsquo;s Perspective&lt;/li&gt;
+&lt;li&gt;Optimization and Mathematical Modeling in Computer Architecture&lt;/li&gt;
+&lt;li&gt;Security Basics for Computer Architects&lt;/li&gt;
+&lt;li&gt;The Datacenter as a Computer: An Introduction to the Design of Warehouse-Scale Machines, Second edition&lt;/li&gt;
+&lt;li&gt;Shared-Memory Synchronization&lt;/li&gt;
+&lt;li&gt;Resilient Architecture Design for Voltage Variation&lt;/li&gt;
+&lt;li&gt;Multithreading Architecture&lt;/li&gt;
+&lt;li&gt;Performance Analysis and Tuning for General Purpose Graphics Processing Units (GPGPU)&lt;/li&gt;
+&lt;li&gt;Automatic Parallelization: An Overview of Fundamental Compiler Techniques&lt;/li&gt;
+&lt;li&gt;Phase Change Memory: From Devices to Systems&lt;/li&gt;
+&lt;li&gt;Multi-Core Cache Hierarchies&lt;/li&gt;
+&lt;li&gt;A Primer on Memory Consistency and Cache Coherence&lt;/li&gt;
+&lt;li&gt;Dynamic Binary Modification: Tools, Techniques, and Applications&lt;/li&gt;
+&lt;li&gt;Quantum Computing for Computer Architects, Second Edition&lt;/li&gt;
+&lt;li&gt;High Performance Datacenter Networks: Architectures, Algorithms, and Opportunities&lt;/li&gt;
+&lt;li&gt;Processor Microarchitecture: An Implementation Perspective&lt;/li&gt;
+&lt;li&gt;Transactional Memory, 2nd edition&lt;/li&gt;
+&lt;li&gt;Computer Architecture Performance Evaluation Methods&lt;/li&gt;
+&lt;li&gt;Introduction to Reconfigurable Supercomputing&lt;/li&gt;
+&lt;li&gt;On-Chip Networks&lt;/li&gt;
+&lt;li&gt;The Memory System: You Can&amp;rsquo;t Avoid It, You Can&amp;rsquo;t Ignore It, You Can&amp;rsquo;t Fake It&lt;/li&gt;
+&lt;li&gt;Fault Tolerant Computer Architecture&lt;/li&gt;
+&lt;li&gt;The Datacenter as a Computer: An Introduction to the Design of Warehouse-Scale Machines&lt;/li&gt;
+&lt;li&gt;Computer Architecture Techniques for Power-Efficiency&lt;/li&gt;
+&lt;li&gt;Chip Multiprocessor Architecture: Techniques to Improve Throughput and Latency&lt;/li&gt;
+&lt;li&gt;Transactional Memory&lt;/li&gt;
+&lt;li&gt;Quantum Computing for Computer Architects&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       

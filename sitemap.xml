@@ -10,20 +10,62 @@
   
   <url>
     <loc>https://himingway.github.io/categories/</loc>
-    <lastmod>2019-10-15T23:49:19+08:00</lastmod>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://himingway.github.io/tags/chipset/</loc>
-    <lastmod>2019-10-15T23:49:19+08:00</lastmod>
+    <loc>https://himingway.github.io/tags/computer-architecture/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/tags/ebooks/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/categories/ebooks/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://himingway.github.io/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/post/synthesis-lectures-on-computer-architecture/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/tags/</loc>
+    <lastmod>2020-12-06T19:16:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://himingway.github.io/tags/chipset/</loc>
     <lastmod>2019-10-15T23:49:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -45,20 +87,6 @@
   
   <url>
     <loc>https://himingway.github.io/post/pci-fundamental-and-pci-transaction-ordering/pci-fundamental-and-pci-transaction-ordering-3/</loc>
-    <lastmod>2019-10-15T23:49:19+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/post/</loc>
-    <lastmod>2019-10-15T23:49:19+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://himingway.github.io/tags/</loc>
     <lastmod>2019-10-15T23:49:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
